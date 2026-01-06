@@ -12,10 +12,43 @@ export const site = {
     { label: "Galeria", to: "/galeria" },
     { label: "Contato", to: "/contato" }
   ],
-  social: [
-    { label: "Facebook", url: "#" },
-    { label: "Instagram", url: "#" },
-    { label: "Twitter", url: "#" }
+  social: [{ label: "Instagram", url: "https://www.instagram.com/dimexgermany" }],
+  instagram: {
+    label: "Instagram Dimex Germany",
+    url: "https://www.instagram.com/dimexgermany",
+    handle: "@dimexgermany"
+  },
+  instagramPreview: [
+    {
+      image: `${baseUrl}/arquivos/1547559016_01.jpg`,
+      caption: "Fachada com perfis PVC",
+      time: "2h"
+    },
+    {
+      image: `${baseUrl}/arquivos/1547559024_foto3.png`,
+      caption: "Luz natural e conforto",
+      time: "5h"
+    },
+    {
+      image: `${baseUrl}/arquivos/1547559027_foto8.png`,
+      caption: "Detalhes de acabamento",
+      time: "1d"
+    },
+    {
+      image: `${baseUrl}/arquivos/1547559029_foto10.png`,
+      caption: "Arquitetura contemporanea",
+      time: "2d"
+    },
+    {
+      image: `${baseUrl}/arquivos/1547559026_foto6.png`,
+      caption: "Perfis laminados",
+      time: "3d"
+    },
+    {
+      image: `${baseUrl}/arquivos/1547559029_foto11.png`,
+      caption: "Esquadrias sob medida",
+      time: "4d"
+    }
   ],
   contact: {
     email: "contato@dimexprofiles.com.br",

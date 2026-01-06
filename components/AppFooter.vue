@@ -61,5 +61,5 @@
 <script setup lang="ts">
 import { site } from "~/data/site";
 
-const logoUrl = `${site.baseUrl}/img/logo.png`;
+const logoUrl = "/logo-2.png";
 </script>

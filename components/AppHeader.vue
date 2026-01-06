@@ -7,18 +7,12 @@
           <a :href="`tel:${site.contact.phonesRaw[0]}`">{{ site.contact.phones[0] }}</a>
           <a :href="`tel:${site.contact.phonesRaw[1]}`">{{ site.contact.phones[1] }}</a>
         </div>
-        <div class="top-bar__social">
-          <a v-for="item in site.social" :key="item.label" :href="item.url">
-            {{ item.label }}
-          </a>
-        </div>
       </div>
     </div>
     <div class="nav-bar">
       <div class="container nav-bar__inner">
         <NuxtLink to="/" class="brand">
           <img :src="logoUrl" alt="Dimex" />
-          <span>Dimex Profiles</span>
         </NuxtLink>
         <nav class="nav-links">
           <NuxtLink v-for="item in site.nav" :key="item.to" :to="item.to">
@@ -45,5 +39,5 @@
 <script setup lang="ts">
 import { site } from "~/data/site";
 
-const logoUrl = `${site.baseUrl}/img/logo.png`;
+const logoUrl = "/logo-2.png";
 </script>

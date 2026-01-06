@@ -96,6 +96,42 @@
       </div>
     </section>
 
+    <section class="section">
+      <div class="container">
+        <div class="card instagram-callout">
+          <div class="instagram-copy">
+            <span class="eyebrow instagram-eyebrow">SIGA A DIMEX NO INSTAGRAM</span>
+            <h2 class="headline">Atualizacoes e inspiracao para arquitetos.</h2>
+            <p class="subhead">
+              Conteudo tecnico, bastidores e inspiracao para projetos de arquitetura.
+            </p>
+            <div class="instagram-actions">
+              <span class="instagram-handle">{{ site.instagram.handle }}</span>
+              <a class="btn btn--primary" :href="site.instagram.url" target="_blank" rel="noreferrer">
+                {{ site.instagram.label }}
+              </a>
+            </div>
+          </div>
+          <div class="instagram-preview">
+            <div class="instagram-status">
+              <span class="instagram-dot"></span>
+              <span>Feed conectado</span>
+              <span class="instagram-time">Atualizado hoje</span>
+            </div>
+            <div class="instagram-grid">
+              <div v-for="item in site.instagramPreview" :key="item.image" class="instagram-card">
+                <img :src="item.image" :alt="item.caption" loading="lazy" />
+                <div class="instagram-overlay">
+                  <div class="instagram-caption">{{ item.caption }}</div>
+                  <div class="instagram-meta">{{ item.time }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--soft">
       <div class="container">
         <div class="split">
