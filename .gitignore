@@ -9,3 +9,6 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
+/arquivos/
+/public/arquivos/catalogo-2025/test-*
+/public/arquivos/catalogo-2025/p00-capa-800.png
