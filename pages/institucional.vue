@@ -81,5 +81,5 @@ useHead({
   title: "Institucional"
 });
 
-const institutionalImage = `${site.baseUrl}/arquivos/1534449511_empresa1.jpg`;
+const institutionalImage = `${site.catalogUrl}/p03-sobre.png`;
 </script>

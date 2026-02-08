@@ -11,10 +11,10 @@
           </p>
         </div>
         <div class="card">
-          <span class="pill">Linha Lotos</span>
+          <span class="pill">Linha Protea</span>
           <p class="card__text" style="margin-top: 1rem;">
-            Tipologias versateis, personalizacao e desempenho europeu para
-            diferentes configuracoes de janelas e portas.
+            Portas de correr com piso embutido, trilho nivelado e drenagem
+            eficiente para integrar ambientes com conforto termico e acustico.
           </p>
         </div>
       </div>
