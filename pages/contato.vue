@@ -6,12 +6,12 @@
           <span class="eyebrow">Contato</span>
           <h1 class="headline">Vamos conversar sobre seu projeto.</h1>
           <p class="subhead">
-            Entre em contato para receber suporte tecnico, informacoes e
-            especificacoes completas das linhas Dimex.
+            Entre em contato para receber suporte técnico, informações e
+            especificações completas das linhas Dimex.
           </p>
           <div class="card" style="margin-top: 2rem;">
             <p class="card__text">
-              <strong>Endereco</strong><br />
+              <strong>Endereço</strong><br />
               <a :href="site.contact.addressLink" target="_blank" rel="noreferrer">
                 {{ site.contact.address }}
               </a>
@@ -37,7 +37,7 @@
             <button class="btn btn--primary" type="submit">Enviar</button>
           </form>
           <p style="margin-top: 0.6rem; font-size: 0.85rem; opacity: 0.7;">
-            Formulario ilustrativo. Configure o envio conforme sua integracao.
+            Formulário ilustrativo. Configure o envio conforme sua integração.
           </p>
         </div>
       </div>
@@ -64,8 +64,8 @@
           <div class="card">
             <span class="pill">Atendimento</span>
             <p class="card__text" style="margin-top: 1rem;">
-              Tecnologia Dimex para esquadrias com alto desempenho termico e
-              acustico. Atendimento especializado para arquitetos e especificadores.
+              Tecnologia Dimex para esquadrias com alto desempenho térmico e
+              acústico. Atendimento especializado para arquitetos e especificadores.
             </p>
             <NuxtLink to="/produtos" class="btn btn--secondary" style="margin-top: 1rem;">
               Ver produtos

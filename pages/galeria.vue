@@ -6,15 +6,15 @@
           <span class="eyebrow">Galeria</span>
           <h1 class="headline">Arquitetura, luz e sensorialidade.</h1>
           <p class="subhead">
-            Uma selecao de ambientes que destacam a elegancia das esquadrias Dimex,
+            Uma seleção de ambientes que destacam a elegância das esquadrias Dimex,
             com foco em conforto e desempenho.
           </p>
         </div>
         <div class="card">
           <span class="pill">Inspire-se</span>
           <p class="card__text" style="margin-top: 1rem;">
-            Projetos com perfis em PVC capazes de transformar a experiencia dos
-            usuarios e valorizar cada detalhe construtivo.
+            Projetos com perfis em PVC capazes de transformar a experiência dos
+            usuários e valorizar cada detalhe construtivo.
           </p>
         </div>
       </div>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <section class="section">
       <div class="container hero">
         <div class="hero__panel">
@@ -34,37 +34,30 @@
             </div>
           </div>
         </div>
-        <div
-          class="hero__image"
-          :style="{ backgroundImage: `url(${site.hero.image})` }"
-          aria-hidden="true"
-        ></div>
-      </div>
-    </section>
-
-    <section class="section section--soft">
-      <div class="container">
-        <div class="split">
-          <div>
-            <span class="eyebrow">Produtos em destaque</span>
-            <h2 class="headline">Selecao que inspira projetos contemporaneos.</h2>
-            <p class="subhead">
-              Perfis, tipologias e diferenciais que equilibram desempenho e elegancia,
-              mantendo a assinatura tecnica Dimex.
-            </p>
+        <div class="hero__media">
+          <div
+            class="hero__image"
+            :style="{ backgroundImage: `url(${site.hero.image})` }"
+            aria-hidden="true"
+          ></div>
+          <div class="hero__seals" aria-label="Selos de qualidade">
+            <img
+              src="/20%20ANOS%20DE%20GARANTIA.png"
+              alt="Selo 20 anos de garantia"
+              loading="lazy"
+            />
+            <img
+              src="/PERFIL%20ALEM%C3%83O.png"
+              alt="Selo perfil alemão"
+              loading="lazy"
+            />
           </div>
-          <div class="grid grid-4">
-            <div
-              v-for="(item, index) in site.featuredProducts"
-              :key="item.title"
-              class="card fade-up"
-              :style="{ animationDelay: `${0.05 * index}s` }"
-            >
-              <div class="card__image">
-                <img :src="item.image" :alt="item.title" loading="lazy" />
-              </div>
-              <div class="card__title">{{ item.title }}</div>
-            </div>
+          <div class="hero__certs" aria-label="Certificações">
+            <img
+              src="/CERTIFICA%C3%87%C3%95ES.jpg"
+              alt="Certificações nacionais e internacionais"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
@@ -73,173 +66,37 @@
     <section class="section">
       <div class="container split">
         <div>
-          <span class="eyebrow">Nossa historia</span>
-          <h2 class="headline">Conheca a trajetoria Dimex.</h2>
-          <div class="subhead" style="display: grid; gap: 1rem;">
-            <p v-for="line in site.history" :key="line">{{ line }}</p>
+          <span class="eyebrow">Dimex Window Profile</span>
+          <h2 class="headline">Perfis de PVC com padrão europeu para obras exigentes.</h2>
+          <div class="subhead home-text">
+            <p>
+              A Dimex entrega solução completa em perfis de PVC, unindo tecnologia,
+              design e desempenho para esquadrias residenciais e corporativas.
+            </p>
+            <p>
+              Da especificação ao pós-obra, oferecemos suporte técnico, atendimento próximo
+              e confiança para que cada projeto tenha o melhor resultado.
+            </p>
           </div>
         </div>
         <div class="grid grid-2">
           <div class="card">
-            <span class="pill">Missao</span>
-            <p class="card__text" style="margin-top: 1rem;">{{ site.mission }}</p>
+            <span class="pill">Tecnologia</span>
+            <p class="card__text" style="margin-top: 1rem;">
+              Matérias-primas de alta pureza e controle de processo para durabilidade superior.
+            </p>
           </div>
           <div class="card">
-            <span class="pill">Visao</span>
-            <p class="card__text" style="margin-top: 1rem;">{{ site.vision }}</p>
+            <span class="pill">Garantia</span>
+            <p class="card__text" style="margin-top: 1rem;">
+              Única a oferecer 20 anos de garantia no Brasil para perfis brancos.
+            </p>
           </div>
           <div class="card" style="grid-column: span 2;">
-            <span class="pill">Valores</span>
-            <p class="card__text" style="margin-top: 1rem;">{{ site.values }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="card instagram-callout">
-          <div class="instagram-copy">
-            <span class="eyebrow instagram-eyebrow">SIGA A DIMEX NO INSTAGRAM</span>
-            <h2 class="headline">Atualizacoes e inspiracao para arquitetos.</h2>
-            <p class="subhead">
-              Conteudo tecnico, bastidores e inspiracao para projetos de arquitetura.
+            <span class="pill">Certificações</span>
+            <p class="card__text" style="margin-top: 1rem;">
+              Certificações nacionais e internacionais que comprovam desempenho e qualidade.
             </p>
-            <div class="instagram-actions">
-              <span class="instagram-handle">{{ site.instagram.handle }}</span>
-              <a class="btn btn--primary" :href="site.instagram.url" target="_blank" rel="noreferrer">
-                {{ site.instagram.label }}
-              </a>
-            </div>
-          </div>
-          <div class="instagram-preview">
-            <div class="instagram-status">
-              <span class="instagram-dot"></span>
-              <span>Feed conectado</span>
-              <span class="instagram-time">Atualizado hoje</span>
-            </div>
-            <div class="instagram-grid">
-              <div v-for="item in site.instagramPreview" :key="item.image" class="instagram-card">
-                <img :src="item.image" :alt="item.caption" loading="lazy" />
-                <div class="instagram-overlay">
-                  <div class="instagram-caption">{{ item.caption }}</div>
-                  <div class="instagram-meta">{{ item.time }}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--soft">
-      <div class="container">
-        <div class="split">
-          <div>
-            <span class="eyebrow">Linhas Dimex</span>
-            <h2 class="headline">Solucao completa para esquadrias em PVC.</h2>
-            <p class="subhead">
-              Cada linha foi desenvolvida para atender necessidades especificas de
-              desempenho, acabamento e flexibilidade.
-            </p>
-          </div>
-          <div class="grid grid-3">
-            <div v-for="line in site.productLines" :key="line.title" class="card">
-              <div class="card__image">
-                <img :src="line.image" :alt="line.title" loading="lazy" />
-              </div>
-              <div class="card__title">{{ line.title }}</div>
-              <div class="card__text">{{ line.description }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--deep">
-      <div class="container">
-        <span class="eyebrow" style="color: rgba(248, 244, 239, 0.6);">Qualidade Dimex</span>
-        <h2 class="headline">Tecnologia europeia, proximidade brasileira.</h2>
-        <p class="subhead" style="color: rgba(248, 244, 239, 0.75); max-width: 680px;">
-          {{ site.qualidade.overview }}
-        </p>
-        <div class="grid grid-4" style="margin-top: 2.5rem;">
-          <div v-for="item in site.qualidade.items" :key="item.title" class="card card--glass">
-            <div class="card__image">
-              <img :src="item.image" :alt="item.title" loading="lazy" />
-            </div>
-            <div class="card__title">{{ item.title }}</div>
-            <div class="card__text">{{ item.description }}</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container split">
-        <div>
-          <span class="eyebrow">Laminados e cores</span>
-          <h2 class="headline">{{ site.laminadosInfo.title }}</h2>
-          <p class="subhead">{{ site.laminadosInfo.description }}</p>
-          <div class="grid grid-2" style="margin-top: 1.6rem;">
-            <div v-for="item in site.laminados" :key="item.title" class="card">
-              <div class="card__image">
-                <img :src="item.image" :alt="item.title" loading="lazy" />
-              </div>
-              <div class="card__title">{{ item.title }}</div>
-              <div class="card__text">{{ item.description }}</div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <span class="pill">Vantagens do PVC</span>
-          <div class="subhead" style="margin-top: 1rem;">
-            <p v-for="item in site.laminadosInfo.advantages" :key="item">- {{ item }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--soft">
-      <div class="container">
-        <div class="split">
-          <div>
-            <span class="eyebrow">Galeria</span>
-            <h2 class="headline">Inspire-se com projetos e ambientes.</h2>
-            <p class="subhead">
-              Solucoes Dimex elevam o conforto e a estetica de residencias, fachadas e
-              interiores.
-            </p>
-          </div>
-          <div class="grid grid-3 gallery-grid">
-            <img v-for="image in galleryPreview" :key="image.src" :src="image.src" :alt="image.alt" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="split">
-          <div>
-            <span class="eyebrow">Blog</span>
-            <h2 class="headline">Conteudo tecnico e tendencias.</h2>
-            <p class="subhead">
-              Materiais, performance e arquitetura em leitura leve para apoiar suas
-              escolhas.
-            </p>
-            <NuxtLink class="btn btn--secondary" to="/blog" style="margin-top: 1.5rem;">
-              Ver todas as noticias
-            </NuxtLink>
-          </div>
-          <div class="grid grid-3">
-            <div v-for="post in blogPreview" :key="post.title" class="card blog-card">
-              <div class="card__image">
-                <img :src="post.image" :alt="post.title" loading="lazy" />
-              </div>
-              <div class="card__title">{{ post.title }}</div>
-              <div class="blog-card__meta">{{ post.date }}</div>
-            </div>
           </div>
         </div>
       </div>
@@ -249,7 +106,7 @@
       <div class="container split">
         <div>
           <span class="eyebrow" style="color: rgba(248, 244, 239, 0.6);">Contato</span>
-          <h2 class="headline">Vamos conversar sobre seu proximo projeto.</h2>
+          <h2 class="headline">Vamos conversar sobre seu próximo projeto.</h2>
           <p class="subhead" style="color: rgba(248, 244, 239, 0.75);">
             Fale com nossos especialistas e leve a tecnologia Dimex para suas obras.
           </p>
@@ -279,7 +136,4 @@ import { site } from "~/data/site";
 useHead({
   title: "Home"
 });
-
-const galleryPreview = site.galleryImages.slice(0, 6);
-const blogPreview = site.blogPosts.slice(0, 3);
 </script>

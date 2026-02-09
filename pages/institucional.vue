@@ -4,9 +4,9 @@
       <div class="container split">
         <div>
           <span class="eyebrow">Institucional</span>
-          <h1 class="headline">Dimex: engenharia e design em equilibrio.</h1>
+          <h1 class="headline">Dimex: engenharia e design em equilíbrio.</h1>
           <p class="subhead">
-            Conheca a historia que conecta tecnologia alema a solucoes de alto
+            Conheça a história que conecta tecnologia alemã a soluções de alto
             desempenho para esquadrias em PVC.
           </p>
           <div class="hero__stats" style="margin-top: 2rem;">
@@ -21,7 +21,7 @@
             <img :src="institutionalImage" alt="Dimex institucional" />
           </div>
           <div class="card__text">
-            Tecnologia, inovacao e sustentabilidade guiam cada etapa da producao.
+            Tecnologia, inovação e sustentabilidade guiam cada etapa da produção.
           </div>
         </div>
       </div>
@@ -30,19 +30,19 @@
     <section class="section section--soft">
       <div class="container split">
         <div>
-          <span class="eyebrow">Nossa historia</span>
-          <h2 class="headline">Conheca nossa trajetoria.</h2>
+          <span class="eyebrow">Nossa história</span>
+          <h2 class="headline">Conheça nossa trajetória.</h2>
           <div class="subhead" style="display: grid; gap: 1rem;">
             <p v-for="line in site.history" :key="line">{{ line }}</p>
           </div>
         </div>
         <div class="grid grid-2">
           <div class="card">
-            <span class="pill">Missao</span>
+            <span class="pill">Missão</span>
             <p class="card__text" style="margin-top: 1rem;">{{ site.mission }}</p>
           </div>
           <div class="card">
-            <span class="pill">Visao</span>
+            <span class="pill">Visão</span>
             <p class="card__text" style="margin-top: 1rem;">{{ site.vision }}</p>
           </div>
           <div class="card" style="grid-column: span 2;">
@@ -59,8 +59,8 @@
           <span class="eyebrow">Compromisso</span>
           <h2 class="headline">Uma marca pensada para arquitetos.</h2>
           <p class="subhead">
-            A Dimex entrega perfis com alto desempenho termico e acustico, conforto
-            e durabilidade, mantendo uma estetica elegante e contemporanea.
+            A Dimex entrega perfis com alto desempenho térmico e acústico, conforto
+            e durabilidade, mantendo uma estética elegante e contemporânea.
           </p>
         </div>
         <div class="card">

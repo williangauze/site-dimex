@@ -4,7 +4,7 @@
       <div class="container split">
         <div>
           <span class="eyebrow">Produtos</span>
-          <h1 class="headline">Solucoes em PVC para cada tipologia de esquadria.</h1>
+          <h1 class="headline">Soluções em PVC para cada tipologia de esquadria.</h1>
           <p class="subhead">
             Dos perfis estruturais aos acabamentos laminados, a Dimex oferece um
             ecossistema completo para projetos residenciais e comerciais.
@@ -14,7 +14,7 @@
           <span class="pill">Linha Protea</span>
           <p class="card__text" style="margin-top: 1rem;">
             Portas de correr com piso embutido, trilho nivelado e drenagem
-            eficiente para integrar ambientes com conforto termico e acustico.
+            eficiente para integrar ambientes com conforto térmico e acústico.
           </p>
         </div>
       </div>
@@ -23,7 +23,7 @@
     <section class="section section--soft">
       <div class="container">
         <span class="eyebrow">Linhas principais</span>
-        <h2 class="headline">Conheca as linhas Dimex.</h2>
+        <h2 class="headline">Conheça as linhas Dimex.</h2>
         <div class="grid grid-3" style="margin-top: 2rem;">
           <div v-for="line in site.productLines" :key="line.title" class="card">
             <div class="card__image">
@@ -38,7 +38,7 @@
 
     <section class="section">
       <div class="container">
-        <span class="eyebrow">Catalogo</span>
+        <span class="eyebrow">Catálogo</span>
         <h2 class="headline">Produtos e tipologias</h2>
         <div class="grid grid-3" style="margin-top: 2rem;">
           <div v-for="item in site.productCatalog" :key="item.title" class="card">
@@ -56,9 +56,9 @@
       <div class="container split">
         <div>
           <span class="eyebrow">Persianas em PVC</span>
-          <h2 class="headline">Controle de luz e conforto termico.</h2>
+          <h2 class="headline">Controle de luz e conforto térmico.</h2>
           <p class="subhead">
-            Persianas de enrolar pensadas para escurecimento e eficiencia energetica.
+            Persianas de enrolar pensadas para escurecimento e eficiência energética.
           </p>
           <div class="grid grid-3" style="margin-top: 1.8rem;">
             <div v-for="item in site.persianas" :key="item.title" class="card">
@@ -73,7 +73,7 @@
         <div class="card">
           <span class="pill">Destaque</span>
           <p class="card__text" style="margin-top: 1rem;">
-            Solucao padrao para dormitorios, home theaters e escritorios, com
+            Solução padrão para dormitórios, home theaters e escritórios, com
             performance consistente e acabamento sofisticado.
           </p>
         </div>
@@ -84,7 +84,7 @@
       <div class="container split">
         <div>
           <span class="eyebrow">Laminados</span>
-          <h2 class="headline">Acabamentos personalizados e duraveis.</h2>
+          <h2 class="headline">Acabamentos personalizados e duráveis.</h2>
           <p class="subhead">{{ site.laminadosInfo.description }}</p>
           <div class="grid grid-2" style="margin-top: 1.8rem;">
             <div v-for="item in site.laminados" :key="item.title" class="card">
@@ -127,7 +127,7 @@
     <section class="section">
       <div class="container">
         <span class="eyebrow">Qualidade Dimex</span>
-        <h2 class="headline">Certificacoes e diferenciais</h2>
+        <h2 class="headline">Certificações e diferenciais</h2>
         <div class="grid grid-4" style="margin-top: 2rem;">
           <div v-for="item in site.qualidade.items" :key="item.title" class="card">
             <div class="card__image">

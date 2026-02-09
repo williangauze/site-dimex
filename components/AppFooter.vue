@@ -4,7 +4,7 @@
       <div>
         <img :src="logoUrl" alt="Dimex" style="width: 140px; margin-bottom: 1rem;" />
         <p>
-          Solucoes em perfis de PVC para esquadrias com tecnologia alema e
+          Soluções em perfis de PVC para esquadrias com tecnologia alemã e
           desempenho comprovado.
         </p>
         <div class="top-bar__social" style="margin-top: 1rem;">
@@ -45,7 +45,7 @@
           <button class="btn btn--light" type="submit">Enviar</button>
         </form>
         <p style="margin-top: 0.6rem; font-size: 0.85rem; opacity: 0.7;">
-          Cadastre-se para receber novidades e tendencias.
+          Cadastre-se para receber novidades e tendências.
         </p>
       </div>
     </div>

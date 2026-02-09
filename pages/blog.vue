@@ -4,10 +4,10 @@
       <div class="container split">
         <div>
           <span class="eyebrow">Blog</span>
-          <h1 class="headline">Conteudo tecnico e tendencias.</h1>
+          <h1 class="headline">Conteúdo técnico e tendências.</h1>
           <p class="subhead">
-            Noticias, insights e conhecimento sobre perfis de PVC, isolamento e
-            arquitetura contemporanea.
+            Notícias, insights e conhecimento sobre perfis de PVC, isolamento e
+            arquitetura contemporânea.
           </p>
         </div>
         <div class="card">
