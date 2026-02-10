@@ -1,37 +1,30 @@
 <template>
   <div>
-    <section class="section">
-      <div class="container split">
-        <div>
-          <span class="eyebrow">Produtos</span>
-          <h1 class="headline">Soluções em PVC para cada tipologia de esquadria.</h1>
-          <p class="subhead">
-            Dos perfis estruturais aos acabamentos laminados, a Dimex oferece um
-            ecossistema completo para projetos residenciais e comerciais.
-          </p>
-        </div>
-        <div class="card">
-          <span class="pill">Linha Protea</span>
-          <p class="card__text" style="margin-top: 1rem;">
-            Portas de correr com piso embutido, trilho nivelado e drenagem
-            eficiente para integrar ambientes com conforto térmico e acústico.
-          </p>
-        </div>
-      </div>
-    </section>
-
     <section class="section section--soft">
       <div class="container">
         <span class="eyebrow">Linhas principais</span>
         <h2 class="headline">Conheça as linhas Dimex.</h2>
-        <div class="grid grid-3" style="margin-top: 2rem;">
-          <div v-for="line in site.productLines" :key="line.title" class="card">
-            <div class="card__image">
-              <img :src="line.image" :alt="line.title" loading="lazy" />
+        <div class="grid grid-1" style="margin-top: 2rem;">
+          <template v-for="(line, index) in site.productLines" :key="`${line.title}-${index}`">
+            <details v-if="line.revealImage" class="line-details">
+              <summary class="card line-details__summary">
+                <div class="card__image">
+                  <img :src="line.image" :alt="line.title" loading="lazy" />
+                </div>
+                <span class="line-details__hint">Clique para expandir</span>
+              </summary>
+              <div class="line-details__panel">
+                <img :src="line.revealImage" :alt="`Catálogo ${line.title}`" loading="lazy" />
+              </div>
+            </details>
+            <div v-else class="card">
+              <div class="card__image">
+                <img :src="line.image" :alt="line.title" loading="lazy" />
+              </div>
+              <div class="card__title">{{ line.title }}</div>
+              <div class="card__text">{{ line.description }}</div>
             </div>
-            <div class="card__title">{{ line.title }}</div>
-            <div class="card__text">{{ line.description }}</div>
-          </div>
+          </template>
         </div>
       </div>
     </section>

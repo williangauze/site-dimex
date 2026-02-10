@@ -1,38 +1,11 @@
 <template>
   <div>
-    <section class="section">
-      <div class="container split">
-        <div>
-          <span class="eyebrow">Institucional</span>
-          <h1 class="headline">Dimex: engenharia e design em equilíbrio.</h1>
-          <p class="subhead">
-            Conheça a história que conecta tecnologia alemã a soluções de alto
-            desempenho para esquadrias em PVC.
-          </p>
-          <div class="hero__stats" style="margin-top: 2rem;">
-            <div v-for="stat in site.stats" :key="stat.label" class="stat">
-              <div class="stat__value">{{ stat.value }}</div>
-              <div class="stat__label">{{ stat.label }}</div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card__image">
-            <img :src="institutionalImage" alt="Dimex institucional" />
-          </div>
-          <div class="card__text">
-            Tecnologia, inovação e sustentabilidade guiam cada etapa da produção.
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section section--soft">
       <div class="container split">
         <div>
           <span class="eyebrow">Nossa história</span>
           <h2 class="headline">Conheça nossa trajetória.</h2>
-          <div class="subhead" style="display: grid; gap: 1rem;">
+          <div class="subhead history-text">
             <p v-for="line in site.history" :key="line">{{ line }}</p>
           </div>
         </div>
@@ -57,16 +30,53 @@
       <div class="container split">
         <div>
           <span class="eyebrow">Compromisso</span>
-          <h2 class="headline">Uma marca pensada para arquitetos.</h2>
+          <h2 class="headline">Uma marca pensada para todos os projetos.</h2>
           <p class="subhead">
-            A Dimex entrega perfis com alto desempenho térmico e acústico, conforto
-            e durabilidade, mantendo uma estética elegante e contemporânea.
+            A Dimex desenvolve perfis para diferentes tipologias e usos, com alto desempenho
+            térmico e acústico, conforto e durabilidade, mantendo uma estética elegante
+            e contemporânea.
           </p>
         </div>
         <div class="card">
           <span class="pill">Diferenciais</span>
           <div class="subhead" style="margin-top: 1rem;">
             <p v-for="item in site.qualidade.differentiators" :key="item">- {{ item }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container split">
+        <div>
+          <span class="eyebrow">Certificações</span>
+          <h2 class="headline">Qualidade comprovada.</h2>
+          <p class="subhead">
+            Os perfis DIMEX passam por testes rigorosos de desempenho e composição, com validações
+            em laboratórios reconhecidos internacionalmente. No Brasil, além das exigências da ABNT
+            para perfis, ensaiamos as esquadrias em penetração de ar, estanqueidade à água e resistência
+            a cargas uniformes, garantindo eficiência, conforto térmico e segurança estrutural.
+          </p>
+        </div>
+        <div class="card" style="display: flex; align-items: center; justify-content: center;">
+          <div class="cert-block">
+            <img
+              src="/Certificado%2020%20anos%20de%20Garantia%20DIMEX%202024.png"
+              alt="Certificado de 20 anos de garantia Dimex"
+              loading="lazy"
+            />
+            <div class="cert-seals" aria-label="Selos de qualidade">
+              <img
+                src="/20%20ANOS%20DE%20GARANTIA.png"
+                alt="Selo 20 anos de garantia"
+                loading="lazy"
+              />
+              <img
+                src="/PERFIL%20ALEM%C3%83O.png"
+                alt="Selo perfil alemão"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -81,5 +91,4 @@ useHead({
   title: "Institucional"
 });
 
-const institutionalImage = `${site.catalogUrl}/p03-sobre.png`;
 </script>

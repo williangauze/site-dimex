@@ -8,8 +8,13 @@
           desempenho comprovado.
         </p>
         <div class="top-bar__social" style="margin-top: 1rem;">
-          <a v-for="item in site.social" :key="item.label" :href="item.url">
-            {{ item.label }}
+          <a :href="site.instagram.url" class="social-link" target="_blank" rel="noreferrer">
+            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" />
+            </svg>
+            <span>{{ site.instagram.handle }}</span>
           </a>
         </div>
       </div>
@@ -40,20 +45,14 @@
       </div>
       <div>
         <strong>Newsletter</strong>
-        <form class="form" style="margin-top: 0.8rem;">
-          <input class="input" type="email" placeholder="Seu e-mail" required />
-          <button class="btn btn--light" type="submit">Enviar</button>
-        </form>
-        <p style="margin-top: 0.6rem; font-size: 0.85rem; opacity: 0.7;">
-          Cadastre-se para receber novidades e tendências.
+        <p style="margin-top: 0.8rem;">
+          Em breve, novidades e tendências no seu e-mail.
         </p>
       </div>
     </div>
     <div class="container footer-bottom">
       <span>Copyright 2026 Dimex.</span>
-      <a href="http://www.ellitedigital.com.br" target="_blank" rel="noreferrer">
-        Desenvolvido por Ellite Digital
-      </a>
+      <span>Desenvolvido por Arbitrium Produtora</span>
     </div>
   </footer>
 </template>
@@ -61,5 +60,5 @@
 <script setup lang="ts">
 import { site } from "~/data/site";
 
-const logoUrl = "/logo-2.png";
+const logoUrl = "/logo.png";
 </script>

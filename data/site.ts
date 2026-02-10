@@ -77,14 +77,14 @@ export const site = {
     { label: "Garantia", value: "20 anos" },
     { label: "Unidades fabris no mundo", value: "7" },
     { label: "Garantia de 20 anos", value: "Única no Brasil" },
-    { label: "Certificada Nacional e Internacionalmente", value: "Empresa" }
+    { label: "no Brasil e no Mundo", value: "Certificada" }
   ],
   history: [
     "A Dimex foi fundada em 1933, em Stuttgart, no berço da indústria e tecnologia alemã.",
     "Mais de 90 anos de experiência consolidaram processos, tecnologia aplicada e padronização do composto de PVC.",
     "A marca é pioneira em oferecer 20 anos de garantia para suas linhas de produtos.",
     "Comprometida com eficiência energética e proteção ambiental, atua com responsabilidade socioambiental.",
-    "No Brasil, a presença é reforçada por quatro unidades em Caxias do Sul - RS, com logística para atender todo o país."
+    "Com 7 unidades fabris pelo mundo, uma fica no Brasil, localizada em Caxias do Sul - RS, com logística para atender todo o país."
   ],
   mission:
     "Desenvolver perfis de PVC com tecnologia e qualidade europeia, garantindo conforto térmico, acústico e segurança.",
@@ -129,45 +129,15 @@ export const site = {
   productLines: [
     {
       title: "Edelweiss 35",
-      description:
-        "Sistema de perfis com design minimalista para vãos menores, com ampla variedade de tipologias.",
-      image: `${catalogUrl}/p13-edelweiss-35.png`
+      description: "Clique para ver o catálogo completo.",
+      image: "/ed35-logo.png",
+      revealImage: "/ed35.png"
     },
     {
       title: "Edelweiss 55 Slide",
-      description:
-        "Linha de correr com deslizamento suave, vedação por escovas e ótimo custo-benefício.",
-      image: `${catalogUrl}/p15-edelweiss-55-slide.png`
-    },
-    {
-      title: "Edelweiss 60",
-      description:
-        "Linha versátil com fixas, maxim-ar, giro e portas camarão, unindo estética e desempenho.",
-      image: `${catalogUrl}/p19-edelweiss-60.png`
-    },
-    {
-      title: "Edelweiss 62 Slide",
-      description:
-        "Portas e janelas de correr com câmaras isolantes e eficiência térmica superior.",
-      image: `${catalogUrl}/p23-edelweiss-62-slide.png`
-    },
-    {
-      title: "Lotos 70 Slide",
-      description:
-        "Sistema robusto para grandes vãos com alto desempenho térmico e acústico.",
-      image: `${catalogUrl}/p27-lotos-70-slide.png`
-    },
-    {
-      title: "Protea",
-      description:
-        "Portas de correr com trilho embutido e piso nivelado, drenagem eficiente e conforto.",
-      image: `${catalogUrl}/p31-protea.png`
-    },
-    {
-      title: "Centaurea 195 Slide",
-      description:
-        "Sistema para portas de correr que atendem grandes vãos com alta performance.",
-      image: `${catalogUrl}/p35-centaurea-195-slide.png`
+      description: "Clique para ver o catálogo completo.",
+      image: "/ed55-s-logo.png",
+      revealImage: "/ed55-s.png"
     }
   ],
   productCatalog: [
