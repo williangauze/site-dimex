@@ -10,8 +10,7 @@ export const site = {
     { label: "Home", to: "/" },
     { label: "Institucional", to: "/institucional" },
     { label: "Produtos", to: "/produtos" },
-    { label: "Blog", to: "/blog" },
-    { label: "Galeria", to: "/galeria" },
+    { label: "Inovação", to: "/blog" },
     { label: "Contato", to: "/contato" }
   ],
   social: [{ label: "Instagram", url: "https://www.instagram.com/dimexgermany" }],

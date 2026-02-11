@@ -11,17 +11,31 @@
         </div>
         <div class="grid grid-2">
           <div class="card">
-            <span class="pill">Missão</span>
+            <UBadge class="pill">Missão</UBadge>
             <p class="card__text" style="margin-top: 1rem;">{{ site.mission }}</p>
           </div>
           <div class="card">
-            <span class="pill">Visão</span>
+            <UBadge class="pill">Visão</UBadge>
             <p class="card__text" style="margin-top: 1rem;">{{ site.vision }}</p>
           </div>
           <div class="card" style="grid-column: span 2;">
-            <span class="pill">Valores</span>
+            <UBadge class="pill">Valores</UBadge>
             <p class="card__text" style="margin-top: 1rem;">{{ site.values }}</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Fábricas</span>
+        <div class="card" style="margin-top: 1.6rem; padding: 0;">
+          <img
+            src="/empresas.png"
+            alt="Unidades fabris Dimex no mundo"
+            loading="lazy"
+            style="width: 100%; height: auto; display: block; border-radius: 20px;"
+          />
         </div>
       </div>
     </section>
@@ -38,7 +52,7 @@
           </p>
         </div>
         <div class="card">
-          <span class="pill">Diferenciais</span>
+          <UBadge class="pill">Diferenciais</UBadge>
           <div class="subhead" style="margin-top: 1rem;">
             <p v-for="item in site.qualidade.differentiators" :key="item">- {{ item }}</p>
           </div>
@@ -87,8 +101,16 @@
 <script setup lang="ts">
 import { site } from "~/data/site";
 
-useHead({
-  title: "Institucional"
+useSeoMeta({
+  title: "Institucional",
+  description:
+    "Conheça a história, missão, visão e valores da Dimex, além dos diferenciais de qualidade e certificações.",
+  ogTitle: "Institucional · Dimex Profiles",
+  ogDescription:
+    "Conheça a história, missão, visão e valores da Dimex, além dos diferenciais de qualidade e certificações.",
+  twitterTitle: "Institucional · Dimex Profiles",
+  twitterDescription:
+    "Conheça a história, missão, visão e valores da Dimex, além dos diferenciais de qualidade e certificações."
 });
 
 </script>

@@ -11,7 +11,7 @@
           </NuxtLink>
         </nav>
         <div class="nav-cta">
-          <button
+          <UButton
             type="button"
             class="btn btn--secondary theme-toggle"
             :aria-pressed="isDark"
@@ -19,8 +19,8 @@
             @click="toggleTheme"
           >
             {{ isDark ? "Modo claro" : "Modo escuro" }}
-          </button>
-          <NuxtLink to="/contato" class="btn btn--primary">Falar com a Dimex</NuxtLink>
+          </UButton>
+          <UButton to="/contato" class="btn btn--primary">Falar com a Dimex</UButton>
         </div>
         <details class="nav-mobile">
           <summary>Menu</summary>
@@ -28,7 +28,7 @@
             <NuxtLink v-for="item in site.nav" :key="item.to" :to="item.to">
               {{ item.label }}
             </NuxtLink>
-            <button
+            <UButton
               type="button"
               class="btn btn--secondary theme-toggle"
               :aria-pressed="isDark"
@@ -36,8 +36,8 @@
               @click="toggleTheme"
             >
               {{ isDark ? "Modo claro" : "Modo escuro" }}
-            </button>
-            <NuxtLink to="/contato" class="btn btn--primary">Falar com a Dimex</NuxtLink>
+            </UButton>
+            <UButton to="/contato" class="btn btn--primary">Falar com a Dimex</UButton>
           </div>
         </details>
       </div>

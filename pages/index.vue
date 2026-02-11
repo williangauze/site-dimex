@@ -20,12 +20,12 @@
             </div>
           </div>
           <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.6rem;">
-            <NuxtLink class="btn btn--primary" :to="site.hero.ctaPrimary.to">
+            <UButton class="btn btn--primary" :to="site.hero.ctaPrimary.to">
               {{ site.hero.ctaPrimary.label }}
-            </NuxtLink>
-            <NuxtLink class="btn btn--secondary" :to="site.hero.ctaSecondary.to">
+            </UButton>
+            <UButton class="btn btn--secondary" :to="site.hero.ctaSecondary.to">
               {{ site.hero.ctaSecondary.label }}
-            </NuxtLink>
+            </UButton>
           </div>
           <div class="hero__stats">
             <div v-for="stat in site.stats" :key="stat.label" class="stat">
@@ -79,24 +79,65 @@
             </p>
           </div>
         </div>
-        <div class="grid grid-2">
+          <div class="grid grid-2">
           <div class="card">
-            <span class="pill">Tecnologia</span>
+            <UBadge class="pill">Tecnologia</UBadge>
             <p class="card__text" style="margin-top: 1rem;">
               Matérias-primas de alta pureza e controle de processo para durabilidade superior.
             </p>
           </div>
           <div class="card">
-            <span class="pill">Garantia</span>
+            <UBadge class="pill">Garantia</UBadge>
             <p class="card__text" style="margin-top: 1rem;">
               Única a oferecer 20 anos de garantia no Brasil para perfis brancos.
             </p>
           </div>
           <div class="card" style="grid-column: span 2;">
-            <span class="pill">Certificações</span>
+            <UBadge class="pill">Certificações</UBadge>
             <p class="card__text" style="margin-top: 1rem;">
               Certificações nacionais e internacionais que comprovam desempenho e qualidade.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="instagram-callout">
+          <div>
+            <span class="eyebrow instagram-eyebrow">Instagram</span>
+            <h2 class="headline">Acompanhe a Dimex no Instagram.</h2>
+            <p class="subhead">
+              Novidades, aplicações e inspirações em perfis de PVC para esquadrias.
+            </p>
+            <div class="instagram-actions">
+              <UButton
+                class="btn btn--primary"
+                :href="site.instagram.url"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver perfil
+              </UButton>
+              <span class="instagram-handle">{{ site.instagram.handle }}</span>
+            </div>
+          </div>
+          <div class="instagram-preview">
+            <div class="instagram-status">
+              <span class="instagram-dot"></span>
+              <span>{{ site.instagram.label }}</span>
+              <span class="instagram-time">Agora</span>
+            </div>
+            <div class="instagram-embed">
+              <ClientOnly>
+                <blockquote
+                  class="instagram-media"
+                  data-instgrm-permalink="https://www.instagram.com/dimexgermany/"
+                  data-instgrm-version="14"
+                ></blockquote>
+              </ClientOnly>
+            </div>
           </div>
         </div>
       </div>
@@ -121,9 +162,9 @@
           <p class="card__text">
             {{ site.contact.email }}
           </p>
-          <NuxtLink to="/contato" class="btn btn--primary" style="margin-top: 1rem;">
+          <UButton to="/contato" class="btn btn--primary" style="margin-top: 1rem;">
             Falar com a Dimex
-          </NuxtLink>
+          </UButton>
         </div>
       </div>
     </section>
@@ -131,9 +172,44 @@
 </template>
 
 <script setup lang="ts">
+import { nextTick, onMounted } from "vue";
 import { site } from "~/data/site";
 
+const processInstagramEmbeds = () => {
+  const instgrm = (window as { instgrm?: { Embeds?: { process?: () => void } } }).instgrm;
+  instgrm?.Embeds?.process?.();
+};
+
+onMounted(async () => {
+  await nextTick();
+  processInstagramEmbeds();
+  const interval = window.setInterval(() => {
+    const instgrm = (window as { instgrm?: { Embeds?: { process?: () => void } } }).instgrm;
+    if (instgrm?.Embeds?.process) {
+      instgrm.Embeds.process();
+      window.clearInterval(interval);
+    }
+  }, 400);
+});
+
+useSeoMeta({
+  title: "Home",
+  description:
+    "Perfis de PVC com padrão europeu, alta durabilidade e 20 anos de garantia. Conheça as linhas Dimex e soluções para esquadrias.",
+  ogTitle: "Dimex Profiles",
+  ogDescription:
+    "Perfis de PVC com padrão europeu, alta durabilidade e 20 anos de garantia. Conheça as linhas Dimex e soluções para esquadrias.",
+  twitterTitle: "Dimex Profiles",
+  twitterDescription:
+    "Perfis de PVC com padrão europeu, alta durabilidade e 20 anos de garantia. Conheça as linhas Dimex e soluções para esquadrias."
+});
+
 useHead({
-  title: "Home"
+  script: [
+    {
+      src: "https://www.instagram.com/embed.js",
+      async: true
+    }
+  ]
 });
 </script>

@@ -29,12 +29,12 @@
           </div>
         </div>
         <div class="card">
-          <span class="pill">Envie uma mensagem</span>
+          <UBadge class="pill">Envie uma mensagem</UBadge>
           <form class="form" style="margin-top: 1rem;">
             <input class="input" type="text" placeholder="Nome" required />
             <input class="input" type="email" placeholder="E-mail" required />
             <textarea class="textarea" placeholder="Mensagem" required></textarea>
-            <button class="btn btn--primary" type="submit">Enviar</button>
+            <UButton class="btn btn--primary" type="submit">Enviar</UButton>
           </form>
           <p style="margin-top: 0.6rem; font-size: 0.85rem; opacity: 0.7;">
             Formulário ilustrativo. Configure o envio conforme sua integração.
@@ -47,7 +47,7 @@
       <div class="container">
         <div class="contact-grid">
           <div class="card">
-            <span class="pill">Mapa</span>
+            <UBadge class="pill">Mapa</UBadge>
             <div style="margin-top: 1rem;">
               <iframe
                 :src="site.contact.mapEmbed"
@@ -62,14 +62,14 @@
             </div>
           </div>
           <div class="card">
-            <span class="pill">Atendimento</span>
+            <UBadge class="pill">Atendimento</UBadge>
             <p class="card__text" style="margin-top: 1rem;">
               Tecnologia Dimex para esquadrias com alto desempenho térmico e
               acústico. Atendimento especializado para arquitetos e especificadores.
             </p>
-            <NuxtLink to="/produtos" class="btn btn--secondary" style="margin-top: 1rem;">
+            <UButton to="/produtos" class="btn btn--secondary" style="margin-top: 1rem;">
               Ver produtos
-            </NuxtLink>
+            </UButton>
           </div>
         </div>
       </div>
@@ -80,7 +80,15 @@
 <script setup lang="ts">
 import { site } from "~/data/site";
 
-useHead({
-  title: "Contato"
+useSeoMeta({
+  title: "Contato",
+  description:
+    "Fale com a Dimex e receba suporte técnico, informações e especificações das linhas de perfis em PVC.",
+  ogTitle: "Contato · Dimex Profiles",
+  ogDescription:
+    "Fale com a Dimex e receba suporte técnico, informações e especificações das linhas de perfis em PVC.",
+  twitterTitle: "Contato · Dimex Profiles",
+  twitterDescription:
+    "Fale com a Dimex e receba suporte técnico, informações e especificações das linhas de perfis em PVC."
 });
 </script>

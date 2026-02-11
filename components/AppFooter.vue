@@ -50,6 +50,18 @@
         </p>
       </div>
     </div>
+    <div class="container footer-share">
+      <div>
+        <strong>Compartilhe a Dimex</strong>
+        <p style="margin-top: 0.4rem; color: rgba(248, 244, 239, 0.75);">
+          Gostou das soluções Dimex? Envie o site para sua equipe ou clientes.
+        </p>
+      </div>
+      <div class="footer-share__actions">
+        <UButton class="btn btn--light" type="button" @click="shareSite">Compartilhar</UButton>
+        <button class="footer-share__link" type="button" @click="copyLink">Copiar link</button>
+      </div>
+    </div>
     <div class="container footer-bottom">
       <span>Copyright 2026 Dimex.</span>
       <span>Desenvolvido por Arbitrium Produtora</span>
@@ -61,4 +73,38 @@
 import { site } from "~/data/site";
 
 const logoUrl = "/logo.png";
+const toast = useToast();
+
+const getShareUrl = () => {
+  if (typeof window === "undefined") return "";
+  return window.location.href;
+};
+
+const copyLink = async () => {
+  if (typeof navigator === "undefined") return;
+  try {
+    await navigator.clipboard.writeText(getShareUrl());
+    toast.add({ title: "Link copiado", description: "Pronto para compartilhar." });
+  } catch {
+    toast.add({ title: "Não foi possível copiar", color: "red" });
+  }
+};
+
+const shareSite = async () => {
+  if (typeof navigator === "undefined") return;
+  const url = getShareUrl();
+  if (!url) return;
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: "Dimex Window Profile",
+        url
+      });
+      return;
+    } catch {
+      // user cancelled share
+    }
+  }
+  await copyLink();
+};
 </script>
