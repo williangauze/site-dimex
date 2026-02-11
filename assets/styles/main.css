@@ -1,3 +1,5 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Sora:wght@300;400;500;600&display=swap");
 
 :root {
@@ -263,6 +265,20 @@ main {
 .line-details .card__image img {
   max-width: 180px;
   margin: 0;
+}
+
+.laminados-stack {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.laminados-stack__image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 12px 30px rgba(31, 36, 32, 0.08);
+  border: 1px solid rgba(31, 36, 32, 0.08);
+  background: #fffdf9;
 }
 
 .instagram-callout {

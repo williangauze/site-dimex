@@ -3,7 +3,7 @@
     <section class="section section--soft">
       <div class="container">
         <span class="eyebrow">Linhas principais</span>
-        <h2 class="headline">Conheça as linhas Dimex.</h2>
+        <h2 class="headline">Conheça nossas linhas.</h2>
         <div class="grid grid-1" style="margin-top: 2rem;">
           <template v-for="(line, index) in site.productLines" :key="`${line.title}-${index}`">
             <details v-if="line.revealImage" class="line-details">
@@ -25,113 +25,44 @@
               <div class="card__text">{{ line.description }}</div>
             </div>
           </template>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Catálogo</span>
-        <h2 class="headline">Produtos e tipologias</h2>
-        <div class="grid grid-3" style="margin-top: 2rem;">
-          <div v-for="item in site.productCatalog" :key="item.title" class="card">
-            <div class="card__image">
-              <img :src="item.image" :alt="item.title" loading="lazy" />
-            </div>
-            <div class="card__title">{{ item.title }}</div>
-            <div class="card__text">{{ item.description }}</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--soft">
-      <div class="container split">
-        <div>
-          <span class="eyebrow">Persianas em PVC</span>
-          <h2 class="headline">Controle de luz e conforto térmico.</h2>
-          <p class="subhead">
-            Persianas de enrolar pensadas para escurecimento e eficiência energética.
-          </p>
-          <div class="grid grid-3" style="margin-top: 1.8rem;">
-            <div v-for="item in site.persianas" :key="item.title" class="card">
+          <details class="line-details">
+            <summary class="card line-details__summary">
               <div class="card__image">
-                <img :src="item.image" :alt="item.title" loading="lazy" />
+                <img src="/PERSIANA.png" alt="Persianas" loading="lazy" />
               </div>
-              <div class="card__title">{{ item.title }}</div>
-              <div class="card__text">{{ item.description }}</div>
+              <span class="line-details__hint">Clique para expandir</span>
+            </summary>
+            <div class="line-details__panel">
+              <img src="/persiana-capa.png" alt="Persianas" loading="lazy" />
             </div>
-          </div>
-        </div>
-        <div class="card">
-          <span class="pill">Destaque</span>
-          <p class="card__text" style="margin-top: 1rem;">
-            Solução padrão para dormitórios, home theaters e escritórios, com
-            performance consistente e acabamento sofisticado.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container split">
-        <div>
-          <span class="eyebrow">Laminados</span>
-          <h2 class="headline">Acabamentos personalizados e duráveis.</h2>
-          <p class="subhead">{{ site.laminadosInfo.description }}</p>
-          <div class="grid grid-2" style="margin-top: 1.8rem;">
-            <div v-for="item in site.laminados" :key="item.title" class="card">
+          </details>
+          <details class="line-details">
+            <summary class="card line-details__summary">
               <div class="card__image">
-                <img :src="item.image" :alt="item.title" loading="lazy" />
+                <img src="/laminados-logo.png" alt="Laminados" loading="lazy" />
               </div>
-              <div class="card__title">{{ item.title }}</div>
-              <div class="card__text">{{ item.description }}</div>
+              <span class="line-details__hint">Clique para expandir</span>
+            </summary>
+            <div class="line-details__panel">
+              <div class="laminados-stack">
+                <img class="laminados-stack__image" src="/laminados.jpg" alt="Laminados" loading="lazy" />
+                <img class="laminados-stack__image" src="/50.jpg" alt="Laminado 50" loading="lazy" />
+                <img class="laminados-stack__image" src="/51.jpg" alt="Laminado 51" loading="lazy" />
+                <img class="laminados-stack__image" src="/52.jpg" alt="Laminado 52" loading="lazy" />
+                <img class="laminados-stack__image" src="/53.jpg" alt="Laminado 53" loading="lazy" />
+                <img class="laminados-stack__image" src="/54.jpg" alt="Laminado 54" loading="lazy" />
+                <img class="laminados-stack__image" src="/55.jpg" alt="Laminado 55" loading="lazy" />
+                <img class="laminados-stack__image" src="/56.jpg" alt="Laminado 56" loading="lazy" />
+                <img class="laminados-stack__image" src="/57.jpg" alt="Laminado 57" loading="lazy" />
+                <img class="laminados-stack__image" src="/58.jpg" alt="Laminado 58" loading="lazy" />
+                <img class="laminados-stack__image" src="/59.jpg" alt="Laminado 59" loading="lazy" />
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="card">
-          <span class="pill">Vantagens</span>
-          <div class="subhead" style="margin-top: 1rem;">
-            <p v-for="item in site.laminadosInfo.advantages" :key="item">- {{ item }}</p>
-          </div>
+          </details>
         </div>
       </div>
     </section>
 
-    <section class="section section--soft">
-      <div class="container split">
-        <div class="card">
-          <div class="card__image">
-            <img :src="site.reforcos.image" :alt="site.reforcos.title" loading="lazy" />
-          </div>
-          <div class="card__title">{{ site.reforcos.title }}</div>
-          <div class="card__text">{{ site.reforcos.description }}</div>
-        </div>
-        <div class="card">
-          <div class="card__image">
-            <img :src="site.telaMosquiteiro.image" :alt="site.telaMosquiteiro.title" loading="lazy" />
-          </div>
-          <div class="card__title">{{ site.telaMosquiteiro.title }}</div>
-          <div class="card__text">{{ site.telaMosquiteiro.description }}</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Qualidade Dimex</span>
-        <h2 class="headline">Certificações e diferenciais</h2>
-        <div class="grid grid-4" style="margin-top: 2rem;">
-          <div v-for="item in site.qualidade.items" :key="item.title" class="card">
-            <div class="card__image">
-              <img :src="item.image" :alt="item.title" loading="lazy" />
-            </div>
-            <div class="card__title">{{ item.title }}</div>
-            <div class="card__text">{{ item.description }}</div>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 

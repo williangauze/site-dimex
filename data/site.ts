@@ -138,6 +138,30 @@ export const site = {
       description: "Clique para ver o catálogo completo.",
       image: "/ed55-s-logo.png",
       revealImage: "/ed55-s.png"
+    },
+    {
+      title: "Edelweiss 60",
+      description: "Clique para ver o catálogo completo.",
+      image: "/ed60.png",
+      revealImage: "/ed60-ap.png"
+    },
+    {
+      title: "Edelweiss 62 Slide",
+      description: "Clique para ver o catálogo completo.",
+      image: "/e62s-logo.png",
+      revealImage: "/ed62-s.png"
+    },
+    {
+      title: "Lotos 70 Slide",
+      description: "Clique para ver o catálogo completo.",
+      image: "/l70-capa.png",
+      revealImage: "/l70.png"
+    },
+    {
+      title: "Centaurea 195 Slide",
+      description: "Clique para ver o catálogo completo.",
+      image: "/CENTAUREA.png",
+      revealImage: "/CENTAURA-RESTO.png"
     }
   ],
   productCatalog: [

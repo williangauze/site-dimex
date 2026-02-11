@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
   css: ["~/assets/styles/main.css"],
+  modules: ["@nuxt/ui"],
   app: {
     head: {
       title: "Dimex Profiles",
