@@ -12,17 +12,19 @@
         </p>
         <div class="grid grid-1" style="margin-top: 2rem;">
           <template v-for="(line, index) in site.productLines" :key="`${line.title}-${index}`">
-            <UCollapsible v-if="line.revealImage" class="line-details" v-slot="{ open }">
-              <button type="button" class="card line-details__summary" :class="{ 'is-open': open }">
-                <div class="card__image">
-                  <img :src="line.image" :alt="line.title" loading="lazy" />
-                </div>
-                <span class="line-details__chevron" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
-                  </svg>
-                </span>
-              </button>
+            <UCollapsible v-if="line.revealImage" class="line-details">
+              <template #default="{ open }">
+                <button type="button" class="card line-details__summary" :class="{ 'is-open': open }">
+                  <div class="card__image">
+                    <img :src="line.image" :alt="line.title" loading="lazy" />
+                  </div>
+                  <span class="line-details__chevron" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                  </span>
+                </button>
+              </template>
               <template #content>
                 <div class="line-details__panel">
                   <img :src="line.revealImage" :alt="`Catálogo ${line.title}`" loading="lazy" />
@@ -37,34 +39,38 @@
               <div class="card__text">{{ line.description }}</div>
             </div>
           </template>
-          <UCollapsible class="line-details" v-slot="{ open }">
-            <button type="button" class="card line-details__summary" :class="{ 'is-open': open }">
-              <div class="card__image">
-                <img src="/PERSIANA.png" alt="Persianas" loading="lazy" />
-              </div>
-              <span class="line-details__chevron" aria-hidden="true">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
-                </svg>
-              </span>
-            </button>
+          <UCollapsible class="line-details">
+            <template #default="{ open }">
+              <button type="button" class="card line-details__summary" :class="{ 'is-open': open }">
+                <div class="card__image">
+                  <img src="/PERSIANA.png" alt="Persianas" loading="lazy" />
+                </div>
+                <span class="line-details__chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
+                  </svg>
+                </span>
+              </button>
+            </template>
             <template #content>
               <div class="line-details__panel">
                 <img src="/persiana-capa.png" alt="Persianas" loading="lazy" />
               </div>
             </template>
           </UCollapsible>
-          <UCollapsible class="line-details" v-slot="{ open }">
-            <button type="button" class="card line-details__summary" :class="{ 'is-open': open }">
-              <div class="card__image">
-                <img src="/laminados-logo.png" alt="Laminados" loading="lazy" />
-              </div>
-              <span class="line-details__chevron" aria-hidden="true">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
-                </svg>
-              </span>
-            </button>
+          <UCollapsible class="line-details">
+            <template #default="{ open }">
+              <button type="button" class="card line-details__summary" :class="{ 'is-open': open }">
+                <div class="card__image">
+                  <img src="/laminados-logo.png" alt="Laminados" loading="lazy" />
+                </div>
+                <span class="line-details__chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
+                  </svg>
+                </span>
+              </button>
+            </template>
             <template #content>
               <div class="line-details__panel">
                 <div class="laminados-stack">
