@@ -42,19 +42,19 @@
           ></div>
           <div class="hero__seals" aria-label="Selos de qualidade">
             <img
-              src="/20%20ANOS%20DE%20GARANTIA.png"
+              src="/20%20ANOS%20DE%20GARANTIA.webp"
               alt="Selo 20 anos de garantia"
               loading="lazy"
             />
             <img
-              src="/PERFIL%20ALEM%C3%83O.png"
+              src="/PERFIL%20ALEM%C3%83O.webp"
               alt="Selo perfil alemão"
               loading="lazy"
             />
           </div>
           <div class="hero__certs" aria-label="Certificações">
             <img
-              src="/CERTIFICA%C3%87%C3%95ES.jpg"
+              src="/CERTIFICA%C3%87%C3%95ES.webp"
               alt="Certificações nacionais e internacionais"
               loading="lazy"
             />
@@ -213,3 +213,4 @@ useHead({
   ]
 });
 </script>
+

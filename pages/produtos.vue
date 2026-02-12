@@ -43,7 +43,7 @@
             <template #default="{ open }">
               <button type="button" class="card line-details__summary" :class="{ 'is-open': open }">
                 <div class="card__image">
-                  <img src="/PERSIANA.png" alt="Persianas" loading="lazy" />
+                  <img src="/PERSIANA.webp" alt="Persianas" loading="lazy" />
                 </div>
                 <span class="line-details__chevron" aria-hidden="true">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -54,7 +54,7 @@
             </template>
             <template #content>
               <div class="line-details__panel">
-                <img src="/persiana-capa.png" alt="Persianas" loading="lazy" />
+                <img src="/persiana-capa.webp" alt="Persianas" loading="lazy" />
               </div>
             </template>
           </UCollapsible>
@@ -62,7 +62,7 @@
             <template #default="{ open }">
               <button type="button" class="card line-details__summary" :class="{ 'is-open': open }">
                 <div class="card__image">
-                  <img src="/laminados-logo.png" alt="Laminados" loading="lazy" />
+                  <img src="/laminados-logo.webp" alt="Laminados" loading="lazy" />
                 </div>
                 <span class="line-details__chevron" aria-hidden="true">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -73,18 +73,43 @@
             </template>
             <template #content>
               <div class="line-details__panel">
-                <div class="laminados-stack">
-                  <img class="laminados-stack__image" src="/laminados.jpg" alt="Laminados" loading="lazy" />
-                  <img class="laminados-stack__image" src="/50.jpg" alt="Laminado 50" loading="lazy" />
-                  <img class="laminados-stack__image" src="/51.jpg" alt="Laminado 51" loading="lazy" />
-                  <img class="laminados-stack__image" src="/52.jpg" alt="Laminado 52" loading="lazy" />
-                  <img class="laminados-stack__image" src="/53.jpg" alt="Laminado 53" loading="lazy" />
-                  <img class="laminados-stack__image" src="/54.jpg" alt="Laminado 54" loading="lazy" />
-                  <img class="laminados-stack__image" src="/55.jpg" alt="Laminado 55" loading="lazy" />
-                  <img class="laminados-stack__image" src="/56.jpg" alt="Laminado 56" loading="lazy" />
-                  <img class="laminados-stack__image" src="/57.jpg" alt="Laminado 57" loading="lazy" />
-                  <img class="laminados-stack__image" src="/58.jpg" alt="Laminado 58" loading="lazy" />
-                  <img class="laminados-stack__image" src="/59.jpg" alt="Laminado 59" loading="lazy" />
+                <div class="laminados-carousel-shell">
+                  <UButton
+                    class="laminados-carousel__side-button"
+                    icon="i-lucide-chevron-left"
+                    color="neutral"
+                    variant="solid"
+                    aria-label="Imagem anterior de laminados"
+                    @click="scrollLaminadosPrev"
+                  >
+                    Anterior
+                  </UButton>
+                  <UCarousel
+                    ref="laminadosCarouselRef"
+                    class="laminados-carousel"
+                    :items="laminadosCarouselItems"
+                    dots
+                    loop
+                  >
+                    <template #default="{ item }">
+                      <img
+                        class="laminados-carousel__image"
+                        :src="item.src"
+                        :alt="item.alt"
+                        loading="lazy"
+                      />
+                    </template>
+                  </UCarousel>
+                  <UButton
+                    class="laminados-carousel__side-button"
+                    trailing-icon="i-lucide-chevron-right"
+                    color="neutral"
+                    variant="solid"
+                    aria-label="Próxima imagem de laminados"
+                    @click="scrollLaminadosNext"
+                  >
+                    Próxima
+                  </UButton>
                 </div>
               </div>
             </template>
@@ -97,7 +122,39 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import { site } from "~/data/site";
+
+const laminadosCarouselItems = [
+  { src: "/laminados.webp", alt: "Laminados" },
+  { src: "/50.webp", alt: "Laminado 50" },
+  { src: "/51.webp", alt: "Laminado 51" },
+  { src: "/52.webp", alt: "Laminado 52" },
+  { src: "/53.webp", alt: "Laminado 53" },
+  { src: "/54.webp", alt: "Laminado 54" },
+  { src: "/55.webp", alt: "Laminado 55" },
+  { src: "/56.webp", alt: "Laminado 56" },
+  { src: "/57.webp", alt: "Laminado 57" },
+  { src: "/58.webp", alt: "Laminado 58" },
+  { src: "/59.webp", alt: "Laminado 59" }
+];
+
+type LaminadosCarouselRef = {
+  emblaApi?: {
+    scrollPrev: () => void;
+    scrollNext: () => void;
+  };
+};
+
+const laminadosCarouselRef = ref<LaminadosCarouselRef | null>(null);
+
+const scrollLaminadosPrev = () => {
+  laminadosCarouselRef.value?.emblaApi?.scrollPrev();
+};
+
+const scrollLaminadosNext = () => {
+  laminadosCarouselRef.value?.emblaApi?.scrollNext();
+};
 
 useSeoMeta({
   title: "Produtos",
@@ -111,3 +168,4 @@ useSeoMeta({
     "Conheça as linhas Dimex de perfis em PVC, persianas e laminados com padrão europeu, durabilidade e desempenho técnico."
 });
 </script>
+

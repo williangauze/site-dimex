@@ -31,7 +31,7 @@
         <span class="eyebrow">Fábricas</span>
         <div class="card" style="margin-top: 1.6rem; padding: 0;">
           <img
-            src="/empresas.png"
+            src="/empresas.webp"
             alt="Unidades fabris Dimex no mundo"
             loading="lazy"
             style="width: 100%; height: auto; display: block; border-radius: 20px;"
@@ -75,18 +75,18 @@
         <div class="card" style="display: flex; align-items: center; justify-content: center;">
           <div class="cert-block">
             <img
-              src="/Certificado%2020%20anos%20de%20Garantia%20DIMEX%202024.png"
+              src="/Certificado%2020%20anos%20de%20Garantia%20DIMEX%202024.webp"
               alt="Certificado de 20 anos de garantia Dimex"
               loading="lazy"
             />
             <div class="cert-seals" aria-label="Selos de qualidade">
               <img
-                src="/20%20ANOS%20DE%20GARANTIA.png"
+                src="/20%20ANOS%20DE%20GARANTIA.webp"
                 alt="Selo 20 anos de garantia"
                 loading="lazy"
               />
               <img
-                src="/PERFIL%20ALEM%C3%83O.png"
+                src="/PERFIL%20ALEM%C3%83O.webp"
                 alt="Selo perfil alemão"
                 loading="lazy"
               />
@@ -114,3 +114,4 @@ useSeoMeta({
 });
 
 </script>
+

@@ -1,5 +1,5 @@
 const baseUrl = "https://www.dimexprofiles.com.br";
-const ogImage = `${baseUrl}/foto-home.png`;
+const ogImage = `${baseUrl}/foto-home.webp`;
 
 export default defineNuxtConfig({
   css: ["~/assets/styles/main.css"],
@@ -54,3 +54,4 @@ export default defineNuxtConfig({
     }
   }
 });
+

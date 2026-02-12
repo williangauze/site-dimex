@@ -6,7 +6,7 @@
           <span class="eyebrow">Inovação</span>
           <div style="margin-top: 0.4rem;">
             <img
-              src="/PROTEA.png"
+              src="/PROTEA.webp"
               alt="Logo Protea"
               loading="lazy"
               style="max-width: 380px; height: auto;"
@@ -37,6 +37,9 @@
         <div class="card">
           <video
             src="/VÍDEO-PROTEA.mp4"
+            autoplay
+            muted
+            playsinline
             controls
             style="width: 100%; border-radius: 16px;"
           ></video>
@@ -80,7 +83,7 @@ onMounted(() => {
   onUnmounted(() => observer.disconnect());
 });
 
-const profileImage = computed(() => (isDark.value ? "/perfil-modo-escuro.png" : "/perfil.png"));
+const profileImage = computed(() => (isDark.value ? "/perfil-modo-escuro.webp" : "/perfil.webp"));
 
 useSeoMeta({
   title: "Inovação",
@@ -94,3 +97,4 @@ useSeoMeta({
     "Linha Protea: inovação em portas de correr com drenagem eficiente, piso embutido e desempenho técnico Dimex."
 });
 </script>
+

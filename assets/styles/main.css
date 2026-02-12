@@ -309,18 +309,30 @@ main {
   color: var(--ink);
 }
 
-.laminados-stack {
+.laminados-carousel-shell {
   display: grid;
-  gap: 1.2rem;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.9rem;
 }
 
-.laminados-stack__image {
+.laminados-carousel {
+  width: 100%;
+  padding-bottom: 2.2rem;
+}
+
+.laminados-carousel__image {
   width: 100%;
   height: auto;
   border-radius: var(--radius-sm);
   box-shadow: 0 12px 30px rgba(31, 36, 32, 0.08);
   border: 1px solid rgba(31, 36, 32, 0.08);
   background: #fffdf9;
+}
+
+.laminados-carousel__side-button {
+  min-width: 118px;
+  justify-content: center;
 }
 
 .instagram-callout {
@@ -893,6 +905,14 @@ main {
 
   .instagram-callout {
     grid-template-columns: 1fr;
+  }
+
+  .laminados-carousel-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .laminados-carousel__side-button {
+    width: 100%;
   }
 }
 

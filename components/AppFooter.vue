@@ -72,7 +72,7 @@
 <script setup lang="ts">
 import { site } from "~/data/site";
 
-const logoUrl = "/logo.png";
+const logoUrl = "/logo.webp";
 const toast = useToast();
 
 const getShareUrl = () => {
@@ -108,3 +108,4 @@ const shareSite = async () => {
   await copyLink();
 };
 </script>
+

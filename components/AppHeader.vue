@@ -48,7 +48,7 @@
 <script setup lang="ts">
 import { site } from "~/data/site";
 
-const logoUrl = computed(() => (isDark.value ? "/logo.png" : "/logo-2.png"));
+const logoUrl = computed(() => (isDark.value ? "/logo.webp" : "/logo-2.webp"));
 const theme = ref<"light" | "dark">("light");
 
 const isDark = computed(() => theme.value === "dark");
@@ -81,3 +81,4 @@ onMounted(() => {
   setTheme(prefersDark ? "dark" : "light");
 });
 </script>
+

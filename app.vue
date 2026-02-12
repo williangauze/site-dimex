@@ -22,7 +22,7 @@ const organizationSchema = computed(() => ({
   "@type": "Organization",
   name: site.name,
   url: site.baseUrl,
-  logo: `${site.baseUrl}/logo.png`,
+  logo: `${site.baseUrl}/logo.webp`,
   sameAs: [site.instagram.url],
   contactPoint: [
     {
@@ -64,3 +64,4 @@ useHead(() => ({
   ]
 }));
 </script>
+

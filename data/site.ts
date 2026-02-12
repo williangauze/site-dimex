@@ -21,32 +21,32 @@ export const site = {
   },
   instagramPreview: [
     {
-      image: `${catalogUrl}/p01-hero.png`,
+      image: `${catalogUrl}/p01-hero.webp`,
       caption: "Tecnologia e durabilidade",
       time: "hoje"
     },
     {
-      image: `${catalogUrl}/p13-edelweiss-35.png`,
+      image: `${catalogUrl}/p13-edelweiss-35.webp`,
       caption: "Linha Edelweiss 35",
       time: "1d"
     },
     {
-      image: `${catalogUrl}/p15-edelweiss-55-slide.png`,
+      image: `${catalogUrl}/p15-edelweiss-55-slide.webp`,
       caption: "Edelweiss 55 Slide",
       time: "2d"
     },
     {
-      image: `${catalogUrl}/p27-lotos-70-slide.png`,
+      image: `${catalogUrl}/p27-lotos-70-slide.webp`,
       caption: "Lotos 70 Slide",
       time: "3d"
     },
     {
-      image: `${catalogUrl}/p31-protea.png`,
+      image: `${catalogUrl}/p31-protea.webp`,
       caption: "Sistema Protea",
       time: "4d"
     },
     {
-      image: `${catalogUrl}/p45-laminados.png`,
+      image: `${catalogUrl}/p45-laminados.webp`,
       caption: "Laminados e cores",
       time: "5d"
     }
@@ -66,7 +66,7 @@ export const site = {
     description:
       "Fundada em 1933, em Stuttgart, a Dimex entrega perfis de PVC com tecnologia aplicada, matérias-primas de alta pureza e 20 anos de garantia nas linhas de produtos.",
     highlights: ["Padrão europeu", "20 anos de garantia", "Eficiência energética", "Sustentabilidade"],
-    image: "/foto-home.png",
+    image: "/foto-home.webp",
     ctaPrimary: { label: "Conheça os produtos", to: "/produtos" },
     ctaSecondary: { label: "Fale com a Dimex", to: "/contato" }
   },
@@ -83,7 +83,7 @@ export const site = {
     "Mais de 90 anos de experiência consolidaram processos, tecnologia aplicada e padronização do composto de PVC.",
     "A marca é pioneira em oferecer 20 anos de garantia para suas linhas de produtos.",
     "Comprometida com eficiência energética e proteção ambiental, atua com responsabilidade socioambiental.",
-    "Com 7 unidades fabris pelo mundo, uma fica no Brasil, localizada em Caxias do Sul - RS, com logística para atender todo o país."
+    "Com 7 unidades fabris pelo mundo, a Dimex também conta com operação em Caxias do Sul - RS, com logística para atender todo o país."
   ],
   mission:
     "Desenvolver perfis de PVC com tecnologia e qualidade europeia, garantindo conforto térmico, acústico e segurança.",
@@ -94,73 +94,73 @@ export const site = {
   featuredProducts: [
     {
       title: "Edelweiss 35",
-      image: `${catalogUrl}/p13-edelweiss-35.png`
+      image: `${catalogUrl}/p13-edelweiss-35.webp`
     },
     {
       title: "Edelweiss 55 Slide",
-      image: `${catalogUrl}/p15-edelweiss-55-slide.png`
+      image: `${catalogUrl}/p15-edelweiss-55-slide.webp`
     },
     {
       title: "Edelweiss 60",
-      image: `${catalogUrl}/p19-edelweiss-60.png`
+      image: `${catalogUrl}/p19-edelweiss-60.webp`
     },
     {
       title: "Edelweiss 62 Slide",
-      image: `${catalogUrl}/p23-edelweiss-62-slide.png`
+      image: `${catalogUrl}/p23-edelweiss-62-slide.webp`
     },
     {
       title: "Lotos 70 Slide",
-      image: `${catalogUrl}/p27-lotos-70-slide.png`
+      image: `${catalogUrl}/p27-lotos-70-slide.webp`
     },
     {
       title: "Sistema Protea",
-      image: `${catalogUrl}/p31-protea.png`
+      image: `${catalogUrl}/p31-protea.webp`
     },
     {
       title: "Centaurea 195 Slide",
-      image: `${catalogUrl}/p35-centaurea-195-slide.png`
+      image: `${catalogUrl}/p35-centaurea-195-slide.webp`
     },
     {
       title: "Laminados e cores",
-      image: `${catalogUrl}/p45-laminados.png`
+      image: `${catalogUrl}/p45-laminados.webp`
     }
   ],
   productLines: [
     {
       title: "Edelweiss 35",
       description: "Clique para ver o catálogo completo.",
-      image: "/ed35-logo.png",
-      revealImage: "/ed35.png"
+      image: "/ed35-logo.webp",
+      revealImage: "/ed35.webp"
     },
     {
       title: "Edelweiss 55 Slide",
       description: "Clique para ver o catálogo completo.",
-      image: "/ed55-s-logo.png",
-      revealImage: "/ed55-s.png"
+      image: "/ed55-s-logo.webp",
+      revealImage: "/ed55-s.webp"
     },
     {
       title: "Edelweiss 60",
       description: "Clique para ver o catálogo completo.",
-      image: "/ed60.png",
-      revealImage: "/ed60-ap.png"
+      image: "/ed60.webp",
+      revealImage: "/ed60-ap.webp"
     },
     {
       title: "Edelweiss 62 Slide",
       description: "Clique para ver o catálogo completo.",
-      image: "/e62s-logo.png",
-      revealImage: "/ed62-s.png"
+      image: "/e62s-logo.webp",
+      revealImage: "/ed62-s.webp"
     },
     {
       title: "Lotos 70 Slide",
       description: "Clique para ver o catálogo completo.",
-      image: "/l70-capa.png",
-      revealImage: "/l70.png"
+      image: "/l70-capa.webp",
+      revealImage: "/l70.webp"
     },
     {
       title: "Centaurea 195 Slide",
       description: "Clique para ver o catálogo completo.",
-      image: "/CENTAUREA.png",
-      revealImage: "/CENTAURA-RESTO.png"
+      image: "/CENTAUREA.webp",
+      revealImage: "/CENTAURA-RESTO.webp"
     }
   ],
   productCatalog: [
@@ -168,49 +168,49 @@ export const site = {
       title: "Persianas em PVC",
       description:
         "Solução prática para escurecimento, privacidade e conforto, com redução de ruídos.",
-      image: `${catalogUrl}/p39-persianas.png`
+      image: `${catalogUrl}/p39-persianas.webp`
     },
     {
       title: "Laminados e cores",
       description:
         "Acabamentos sofisticados com opções de cores e proteção UV para maior durabilidade.",
-      image: `${catalogUrl}/p45-laminados.png`
+      image: `${catalogUrl}/p45-laminados.webp`
     },
     {
       title: "Perfis de PVC",
       description:
         "Perfis extrudados com multicâmaras, isolamento térmico e acústico e alta resistência.",
-      image: `${catalogUrl}/p06-perfis-pvc.png`
+      image: `${catalogUrl}/p06-perfis-pvc.webp`
     },
     {
       title: "Sobre o PVC",
       description:
         "Composto com etileno e cloro, 100% reciclável e formulado para alto desempenho.",
-      image: `${catalogUrl}/p05-sobre-pvc.png`
+      image: `${catalogUrl}/p05-sobre-pvc.webp`
     },
     {
       title: "Certificações Dimex",
       description:
         "Testes rigorosos e certificações internacionais garantem qualidade e segurança.",
-      image: `${catalogUrl}/p11-certificacoes.png`
+      image: `${catalogUrl}/p11-certificacoes.webp`
     },
     {
       title: "Componentes e acessórios",
       description:
         "Perfis, acoplamentos e itens técnicos para soluções completas em esquadrias.",
-      image: `${catalogUrl}/p52-componentes.png`
+      image: `${catalogUrl}/p52-componentes.webp`
     },
     {
       title: "Baguetes e vedações",
       description:
         "Componentes para fixação de vidros, vedação e isolamento térmico e acústico.",
-      image: `${catalogUrl}/p61-baguetes.png`
+      image: `${catalogUrl}/p61-baguetes.webp`
     },
     {
       title: "Técnico Protea",
       description:
         "Sistema de drenagem e componentes para portas de correr com piso embutido.",
-      image: `${catalogUrl}/p65-protea-tecnico.png`
+      image: `${catalogUrl}/p65-protea-tecnico.webp`
     }
   ],
   persianas: [
@@ -218,44 +218,44 @@ export const site = {
       title: "Persianas 1 Pano",
       description:
         "Solução prática para escurecimento, privacidade e conforto térmico.",
-      image: `${catalogUrl}/p39-persianas.png`
+      image: `${catalogUrl}/p39-persianas.webp`
     },
     {
       title: "Persianas 2 Panos",
       description:
         "Protege contra intempéries e luzes externas, reduzindo ruídos.",
-      image: `${catalogUrl}/p39-persianas.png`
+      image: `${catalogUrl}/p39-persianas.webp`
     },
     {
       title: "Persianas 3 ou Mais Panos",
       description:
         "Conforto e funcionalidade para diferentes tipologias de esquadrias.",
-      image: `${catalogUrl}/p39-persianas.png`
+      image: `${catalogUrl}/p39-persianas.webp`
     }
   ],
   laminados: [
     {
       title: "Tabela de Cores",
       description: "Opções de cores marcantes com acabamento sofisticado.",
-      image: `${catalogUrl}/p45-laminados.png`
+      image: `${catalogUrl}/p45-laminados.webp`
     },
     {
       title: "Aplicação dos Laminados",
       description: "Pode ser aplicado em um ou dois lados, com proteção UV.",
-      image: `${catalogUrl}/p45-laminados.png`
+      image: `${catalogUrl}/p45-laminados.webp`
     }
   ],
   reforcos: {
     title: "Reforços Metálicos",
     description:
       "Perfis com câmara especial para reforço metálico interno, garantindo resistência e estabilidade.",
-    image: `${catalogUrl}/p06-perfis-pvc.png`
+    image: `${catalogUrl}/p06-perfis-pvc.webp`
   },
   telaMosquiteiro: {
     title: "Componentes Técnicos",
     description:
       "Acessórios, baguetes e vedações para montagem precisa e alto desempenho.",
-    image: `${catalogUrl}/p61-baguetes.png`
+    image: `${catalogUrl}/p61-baguetes.webp`
   },
   qualidade: {
     overview:
@@ -265,25 +265,25 @@ export const site = {
         title: "Certificações Dimex",
         description:
           "Testes de desempenho e composição, com aprovação em laboratórios internacionais.",
-        image: `${catalogUrl}/p11-certificacoes.png`
+        image: `${catalogUrl}/p11-certificacoes.webp`
       },
       {
         title: "Sobre o PVC",
         description:
           "Composto versátil, 100% reciclável e formulado para durabilidade e segurança.",
-        image: `${catalogUrl}/p05-sobre-pvc.png`
+        image: `${catalogUrl}/p05-sobre-pvc.webp`
       },
       {
         title: "Perfis de PVC",
         description:
           "Multicâmaras para isolamento térmico e acústico, com alta resistência estrutural.",
-        image: `${catalogUrl}/p06-perfis-pvc.png`
+        image: `${catalogUrl}/p06-perfis-pvc.webp`
       },
       {
         title: "Sustentabilidade",
         description:
           "Redução de consumo de energia e emissões, com foco em impacto ambiental menor.",
-        image: `${catalogUrl}/p08-sustentabilidade.png`
+        image: `${catalogUrl}/p08-sustentabilidade.webp`
       }
     ],
     differentiators: [
@@ -318,49 +318,49 @@ export const site = {
     ]
   },
   galleryImages: [
-    { src: `${catalogUrl}/p00-capa.png`, alt: "Capa catálogo" },
-    { src: `${catalogUrl}/p01-hero.png`, alt: "Hero catálogo" },
-    { src: `${catalogUrl}/p03-sobre.png`, alt: "Sobre a Dimex" },
-    { src: `${catalogUrl}/p05-sobre-pvc.png`, alt: "Sobre o PVC" },
-    { src: `${catalogUrl}/p06-perfis-pvc.png`, alt: "Perfis de PVC" },
-    { src: `${catalogUrl}/p07-beneficios.png`, alt: "Benefícios do PVC" },
-    { src: `${catalogUrl}/p08-sustentabilidade.png`, alt: "Sustentabilidade" },
-    { src: `${catalogUrl}/p11-certificacoes.png`, alt: "Certificações Dimex" },
-    { src: `${catalogUrl}/p13-edelweiss-35.png`, alt: "Edelweiss 35" },
-    { src: `${catalogUrl}/p23-edelweiss-62-slide.png`, alt: "Edelweiss 62 Slide" },
-    { src: `${catalogUrl}/p31-protea.png`, alt: "Protea" },
-    { src: `${catalogUrl}/p45-laminados.png`, alt: "Laminados" }
+    { src: `${catalogUrl}/p00-capa.webp`, alt: "Capa catálogo" },
+    { src: `${catalogUrl}/p01-hero.webp`, alt: "Hero catálogo" },
+    { src: `${catalogUrl}/p03-sobre.webp`, alt: "Sobre a Dimex" },
+    { src: `${catalogUrl}/p05-sobre-pvc.webp`, alt: "Sobre o PVC" },
+    { src: `${catalogUrl}/p06-perfis-pvc.webp`, alt: "Perfis de PVC" },
+    { src: `${catalogUrl}/p07-beneficios.webp`, alt: "Benefícios do PVC" },
+    { src: `${catalogUrl}/p08-sustentabilidade.webp`, alt: "Sustentabilidade" },
+    { src: `${catalogUrl}/p11-certificacoes.webp`, alt: "Certificações Dimex" },
+    { src: `${catalogUrl}/p13-edelweiss-35.webp`, alt: "Edelweiss 35" },
+    { src: `${catalogUrl}/p23-edelweiss-62-slide.webp`, alt: "Edelweiss 62 Slide" },
+    { src: `${catalogUrl}/p31-protea.webp`, alt: "Protea" },
+    { src: `${catalogUrl}/p45-laminados.webp`, alt: "Laminados" }
   ],
   blogPosts: [
     {
       title: "Sobre a Dimex Window Profile",
       date: "Novembro de 2025",
-      image: `${catalogUrl}/p03-sobre.png`
+      image: `${catalogUrl}/p03-sobre.webp`
     },
     {
       title: "Sobre o PVC e sua composição",
       date: "Novembro de 2025",
-      image: `${catalogUrl}/p05-sobre-pvc.png`
+      image: `${catalogUrl}/p05-sobre-pvc.webp`
     },
     {
       title: "Perfis de PVC: tecnologia e desempenho",
       date: "Novembro de 2025",
-      image: `${catalogUrl}/p06-perfis-pvc.png`
+      image: `${catalogUrl}/p06-perfis-pvc.webp`
     },
     {
       title: "Benefícios das esquadrias de PVC",
       date: "Novembro de 2025",
-      image: `${catalogUrl}/p07-beneficios.png`
+      image: `${catalogUrl}/p07-beneficios.webp`
     },
     {
       title: "Sustentabilidade e compromisso ambiental",
       date: "Novembro de 2025",
-      image: `${catalogUrl}/p08-sustentabilidade.png`
+      image: `${catalogUrl}/p08-sustentabilidade.webp`
     },
     {
       title: "Certificações e qualidade Dimex",
       date: "Novembro de 2025",
-      image: `${catalogUrl}/p11-certificacoes.png`
+      image: `${catalogUrl}/p11-certificacoes.webp`
     }
   ],
   blogCategories: [
@@ -371,3 +371,4 @@ export const site = {
     { name: "Certificações", count: 1 }
   ]
 };
+
