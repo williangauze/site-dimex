@@ -12,9 +12,16 @@
         </p>
         <div class="grid grid-1" style="margin-top: 2rem;">
           <template v-for="(line, index) in site.productLines" :key="`${line.title}-${index}`">
-            <UCollapsible v-if="line.revealImage" class="line-details">
+            <UCollapsible v-if="line.revealImage" class="line-details" :unmount-on-hide="false">
               <template #default="{ open }">
-                <button type="button" class="card line-details__summary" :class="{ 'is-open': open }">
+                <button
+                  type="button"
+                  class="card line-details__summary"
+                  :class="{ 'is-open': open }"
+                  @pointerenter="warmUpImage(line.revealImage)"
+                  @focus="warmUpImage(line.revealImage)"
+                  @touchstart.passive="warmUpImage(line.revealImage)"
+                >
                   <div class="card__image">
                     <img :src="line.image" :alt="line.title" loading="lazy" />
                   </div>
@@ -27,7 +34,14 @@
               </template>
               <template #content>
                 <div class="line-details__panel">
-                  <img :src="line.revealImage" :alt="`Catálogo ${line.title}`" loading="lazy" />
+                  <img
+                    :src="line.revealImage"
+                    :alt="`Catálogo ${line.title}`"
+                    loading="lazy"
+                    decoding="async"
+                    width="1280"
+                    height="720"
+                  />
                 </div>
               </template>
             </UCollapsible>
@@ -39,9 +53,16 @@
               <div class="card__text">{{ line.description }}</div>
             </div>
           </template>
-          <UCollapsible class="line-details">
+          <UCollapsible class="line-details" :unmount-on-hide="false">
             <template #default="{ open }">
-              <button type="button" class="card line-details__summary" :class="{ 'is-open': open }">
+              <button
+                type="button"
+                class="card line-details__summary"
+                :class="{ 'is-open': open }"
+                @pointerenter="warmUpImage('/optimized/persiana-capa.webp')"
+                @focus="warmUpImage('/optimized/persiana-capa.webp')"
+                @touchstart.passive="warmUpImage('/optimized/persiana-capa.webp')"
+              >
                 <div class="card__image">
                   <img src="/PERSIANA.webp" alt="Persianas" loading="lazy" />
                 </div>
@@ -54,13 +75,27 @@
             </template>
             <template #content>
               <div class="line-details__panel">
-                <img src="/persiana-capa.webp" alt="Persianas" loading="lazy" />
+                <img
+                  src="/optimized/persiana-capa.webp"
+                  alt="Persianas"
+                  loading="lazy"
+                  decoding="async"
+                  width="1280"
+                  height="720"
+                />
               </div>
             </template>
           </UCollapsible>
-          <UCollapsible class="line-details">
+          <UCollapsible class="line-details" :unmount-on-hide="false">
             <template #default="{ open }">
-              <button type="button" class="card line-details__summary" :class="{ 'is-open': open }">
+              <button
+                type="button"
+                class="card line-details__summary"
+                :class="{ 'is-open': open }"
+                @pointerenter="warmUpImage(laminadosCarouselItems[0]?.src)"
+                @focus="warmUpImage(laminadosCarouselItems[0]?.src)"
+                @touchstart.passive="warmUpImage(laminadosCarouselItems[0]?.src)"
+              >
                 <div class="card__image">
                   <img src="/laminados-logo.webp" alt="Laminados" loading="lazy" />
                 </div>
@@ -97,6 +132,9 @@
                         :src="item.src"
                         :alt="item.alt"
                         loading="lazy"
+                        decoding="async"
+                        width="1280"
+                        height="720"
                       />
                     </template>
                   </UCarousel>
@@ -122,21 +160,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { site } from "~/data/site";
 
 const laminadosCarouselItems = [
-  { src: "/laminados.webp", alt: "Laminados" },
-  { src: "/50.webp", alt: "Laminado 50" },
-  { src: "/51.webp", alt: "Laminado 51" },
-  { src: "/52.webp", alt: "Laminado 52" },
-  { src: "/53.webp", alt: "Laminado 53" },
-  { src: "/54.webp", alt: "Laminado 54" },
-  { src: "/55.webp", alt: "Laminado 55" },
-  { src: "/56.webp", alt: "Laminado 56" },
-  { src: "/57.webp", alt: "Laminado 57" },
-  { src: "/58.webp", alt: "Laminado 58" },
-  { src: "/59.webp", alt: "Laminado 59" }
+  { src: "/optimized/laminados.webp", alt: "Laminados" },
+  { src: "/optimized/50.webp", alt: "Laminado 50" },
+  { src: "/optimized/51.webp", alt: "Laminado 51" },
+  { src: "/optimized/52.webp", alt: "Laminado 52" },
+  { src: "/optimized/53.webp", alt: "Laminado 53" },
+  { src: "/optimized/54.webp", alt: "Laminado 54" },
+  { src: "/optimized/55.webp", alt: "Laminado 55" },
+  { src: "/optimized/56.webp", alt: "Laminado 56" },
+  { src: "/optimized/57.webp", alt: "Laminado 57" },
+  { src: "/optimized/58.webp", alt: "Laminado 58" },
+  { src: "/optimized/59.webp", alt: "Laminado 59" }
 ];
 
 type LaminadosCarouselRef = {
@@ -147,6 +185,15 @@ type LaminadosCarouselRef = {
 };
 
 const laminadosCarouselRef = ref<LaminadosCarouselRef | null>(null);
+const warmedImages = new Set<string>();
+
+const warmUpImage = (src?: string) => {
+  if (typeof window === "undefined" || !src || warmedImages.has(src)) return;
+  warmedImages.add(src);
+  const image = new Image();
+  image.decoding = "async";
+  image.src = src;
+};
 
 const scrollLaminadosPrev = () => {
   laminadosCarouselRef.value?.emblaApi?.scrollPrev();
@@ -155,6 +202,26 @@ const scrollLaminadosPrev = () => {
 const scrollLaminadosNext = () => {
   laminadosCarouselRef.value?.emblaApi?.scrollNext();
 };
+
+onMounted(() => {
+  const browserWindow = window as Window & {
+    requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
+  };
+
+  const warmUpFirstImages = () => {
+    const firstLineImage = site.productLines[0]?.revealImage;
+    warmUpImage(firstLineImage);
+    warmUpImage("/optimized/persiana-capa.webp");
+    warmUpImage("/optimized/laminados.webp");
+  };
+
+  if (browserWindow.requestIdleCallback) {
+    browserWindow.requestIdleCallback(warmUpFirstImages, { timeout: 1200 });
+    return;
+  }
+
+  warmUpFirstImages();
+});
 
 useSeoMeta({
   title: "Produtos",
@@ -168,4 +235,3 @@ useSeoMeta({
     "Conheça as linhas Dimex de perfis em PVC, persianas e laminados com padrão europeu, durabilidade e desempenho técnico."
 });
 </script>
-

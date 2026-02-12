@@ -291,6 +291,10 @@ main {
   border-top: 1px solid rgba(31, 36, 32, 0.12);
 }
 
+.line-details [data-slot="content"] {
+  animation: none !important;
+}
+
 .line-details__panel img {
   width: 100%;
   height: auto;
