@@ -26,18 +26,74 @@
               <strong>E-mail</strong><br />
               <a :href="`mailto:${site.contact.email}`">{{ site.contact.email }}</a>
             </p>
+            <div class="contact-actions">
+              <UButton
+                class="btn btn--secondary"
+                :href="`tel:${site.contact.phonesRaw[0]}`"
+              >
+                Ligar agora
+              </UButton>
+              <UButton
+                class="btn btn--secondary"
+                :href="site.contact.addressLink"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Abrir no mapa
+              </UButton>
+            </div>
           </div>
         </div>
         <div class="card">
           <UBadge class="pill">Envie uma mensagem</UBadge>
-          <form class="form" style="margin-top: 1rem;">
-            <input class="input" type="text" placeholder="Nome" required />
-            <input class="input" type="email" placeholder="E-mail" required />
-            <textarea class="textarea" placeholder="Mensagem" required></textarea>
-            <UButton class="btn btn--primary" type="submit">Enviar</UButton>
+          <form class="form" style="margin-top: 1rem;" @submit.prevent="openEmailDraft">
+            <div class="field">
+              <label class="field-label" for="contact-name">Nome</label>
+              <input
+                id="contact-name"
+                v-model.trim="contactForm.name"
+                class="input"
+                type="text"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div class="field">
+              <label class="field-label" for="contact-email">E-mail</label>
+              <input
+                id="contact-email"
+                v-model.trim="contactForm.email"
+                class="input"
+                type="email"
+                autocomplete="email"
+                inputmode="email"
+                required
+              />
+            </div>
+            <div class="field">
+              <label class="field-label" for="contact-phone">Telefone (opcional)</label>
+              <input
+                id="contact-phone"
+                v-model.trim="contactForm.phone"
+                class="input"
+                type="tel"
+                autocomplete="tel"
+                inputmode="tel"
+              />
+            </div>
+            <div class="field">
+              <label class="field-label" for="contact-message">Mensagem</label>
+              <textarea
+                id="contact-message"
+                v-model.trim="contactForm.message"
+                class="textarea"
+                required
+              ></textarea>
+            </div>
+            <UButton class="btn btn--primary" type="submit">Abrir e-mail para envio</UButton>
           </form>
-          <p style="margin-top: 0.6rem; font-size: 0.85rem; opacity: 0.7;">
-            Formulário ilustrativo. Configure o envio conforme sua integração.
+          <p class="form-helper">
+            Enviamos a mensagem para seu cliente de e-mail já preenchida.
           </p>
         </div>
       </div>
@@ -78,7 +134,41 @@
 </template>
 
 <script setup lang="ts">
+import { reactive } from "vue";
 import { site } from "~/data/site";
+
+const toast = useToast();
+
+const contactForm = reactive({
+  name: "",
+  email: "",
+  phone: "",
+  message: ""
+});
+
+const openEmailDraft = () => {
+  if (typeof window === "undefined") return;
+
+  const subject = encodeURIComponent(`Contato pelo site Dimex - ${contactForm.name}`);
+  const body = [
+    `Nome: ${contactForm.name}`,
+    `E-mail: ${contactForm.email}`,
+    contactForm.phone ? `Telefone: ${contactForm.phone}` : "",
+    "",
+    "Mensagem:",
+    contactForm.message
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  const mailtoUrl = `mailto:${site.contact.email}?subject=${subject}&body=${encodeURIComponent(body)}`;
+
+  window.location.href = mailtoUrl;
+  toast.add({
+    title: "Rascunho aberto",
+    description: "Revise no e-mail e envie para a equipe Dimex."
+  });
+};
 
 useSeoMeta({
   title: "Contato",

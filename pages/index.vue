@@ -23,9 +23,6 @@
             <UButton class="btn btn--primary" :to="site.hero.ctaPrimary.to">
               {{ site.hero.ctaPrimary.label }}
             </UButton>
-            <UButton class="btn btn--secondary" :to="site.hero.ctaSecondary.to">
-              {{ site.hero.ctaSecondary.label }}
-            </UButton>
           </div>
           <div class="hero__stats">
             <div v-for="stat in site.stats" :key="stat.label" class="stat">
@@ -143,31 +140,6 @@
       </div>
     </section>
 
-    <section class="section section--deep">
-      <div class="container split">
-        <div>
-          <span class="eyebrow" style="color: rgba(248, 244, 239, 0.6);">Contato</span>
-          <h2 class="headline">Vamos conversar sobre seu próximo projeto.</h2>
-          <p class="subhead" style="color: rgba(248, 244, 239, 0.75);">
-            Fale com nossos especialistas e leve a tecnologia Dimex para suas obras.
-          </p>
-        </div>
-        <div class="card card--glass">
-          <p class="card__text">
-            {{ site.contact.address }}
-          </p>
-          <p class="card__text">
-            {{ site.contact.phones[0] }} | {{ site.contact.phones[1] }}
-          </p>
-          <p class="card__text">
-            {{ site.contact.email }}
-          </p>
-          <UButton to="/contato" class="btn btn--primary" style="margin-top: 1rem;">
-            Falar com a Dimex
-          </UButton>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 

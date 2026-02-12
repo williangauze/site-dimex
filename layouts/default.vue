@@ -1,7 +1,8 @@
 <template>
   <div class="page">
+    <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
     <AppHeader />
-    <main class="page-content">
+    <main id="main-content" class="page-content" tabindex="-1">
       <slot />
     </main>
     <AppFooter />

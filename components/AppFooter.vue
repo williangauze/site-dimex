@@ -63,7 +63,7 @@
       </div>
     </div>
     <div class="container footer-bottom">
-      <span>Copyright 2026 Dimex.</span>
+      <span>Copyright {{ currentYear }} Dimex.</span>
       <span>Desenvolvido por Arbitrium Produtora</span>
     </div>
   </footer>
@@ -74,6 +74,7 @@ import { site } from "~/data/site";
 
 const logoUrl = "/logo.webp";
 const toast = useToast();
+const currentYear = new Date().getFullYear();
 
 const getShareUrl = () => {
   if (typeof window === "undefined") return "";
