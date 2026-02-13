@@ -48,6 +48,8 @@ export default defineNuxtConfig({
         { name: "twitter:image", content: ogImage, key: "twitter:image" }
       ],
       link: [
+        { rel: "icon", type: "image/webp", href: "/logo.webp" },
+        { rel: "apple-touch-icon", href: "/logo.webp" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }
       ]
