@@ -165,7 +165,7 @@ onMounted(async () => {
 });
 
 useSeoMeta({
-  title: "Home",
+  title: "Dimex Profiles",
   description:
     "Perfis de PVC com padrão europeu, alta durabilidade e 20 anos de garantia. Conheça as linhas Dimex e soluções para esquadrias.",
   ogTitle: "Dimex Profiles",

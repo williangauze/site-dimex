@@ -16,7 +16,10 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "Dimex Profiles",
-      titleTemplate: "%s · Dimex Profiles",
+      titleTemplate: (titleChunk?: string) => {
+        if (!titleChunk || titleChunk === "Dimex Profiles") return "Dimex Profiles";
+        return `${titleChunk} · Dimex Profiles`;
+      },
       htmlAttrs: { lang: "pt-BR" },
       meta: [
         { charset: "utf-8" },
@@ -48,8 +51,9 @@ export default defineNuxtConfig({
         { name: "twitter:image", content: ogImage, key: "twitter:image" }
       ],
       link: [
-        { rel: "icon", type: "image/webp", href: "/logo.webp" },
-        { rel: "apple-touch-icon", href: "/logo.webp" },
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        { rel: "shortcut icon", href: "/favicon.svg" },
+        { rel: "apple-touch-icon", href: "/favicon.svg" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }
       ]
