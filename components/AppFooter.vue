@@ -8,7 +8,7 @@
           desempenho comprovado.
         </p>
         <div class="top-bar__social" style="margin-top: 1rem;">
-          <a :href="site.instagram.url" class="social-link" target="_blank" rel="noreferrer">
+          <a :href="site.instagram.url" class="social-link" target="_blank" rel="noopener noreferrer">
             <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.6" />
               <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6" />
@@ -29,7 +29,7 @@
       <div>
         <strong>Contato</strong>
         <p style="margin-top: 0.8rem;">
-          <a :href="site.contact.addressLink" target="_blank" rel="noreferrer">
+          <a :href="site.contact.addressLink" target="_blank" rel="noopener noreferrer">
             {{ site.contact.address }}
           </a>
         </p>
@@ -42,11 +42,10 @@
         <p>
           <a :href="`mailto:${site.contact.email}`">{{ site.contact.email }}</a>
         </p>
-      </div>
-      <div>
-        <strong>Newsletter</strong>
-        <p style="margin-top: 0.8rem;">
-          Em breve, novidades e tendências no seu e-mail.
+        <p>
+          <a :href="site.contact.whatsappUrl" target="_blank" rel="noopener noreferrer">
+            WhatsApp: {{ site.contact.whatsappPhone }}
+          </a>
         </p>
       </div>
     </div>

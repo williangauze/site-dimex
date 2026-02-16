@@ -1,4 +1,4 @@
-import { getQuery } from "h3";
+import { getQuery, getRequestIP, setResponseStatus } from "h3";
 
 type InstagramMediaItem = {
   id?: string;
@@ -22,7 +22,20 @@ type InstagramPageResponse = {
   instagram_business_account?: { id?: string; username?: string };
 };
 
+type InstagramPublicItem = {
+  id?: string;
+  caption: string;
+  image: string;
+  time: string;
+  url: string;
+};
+
 let cachedUserId: string | null = null;
+let cachedMediaResponse: { expiresAt: number; items: InstagramPublicItem[] } | null = null;
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX_REQUESTS = 90;
+const responseCacheTtlMs = 2 * 60 * 1000;
+const requestBuckets = new Map<string, { startTime: number; count: number }>();
 
 const formatTime = (timestamp?: string) => {
   if (!timestamp) {
@@ -81,9 +94,56 @@ const resolveUserId = async (baseUrl: string, accessToken: string, username?: st
   return cachedUserId || "";
 };
 
+const isRateLimited = (ip: string) => {
+  const now = Date.now();
+  const bucket = requestBuckets.get(ip);
+
+  if (!bucket || now - bucket.startTime >= RATE_LIMIT_WINDOW_MS) {
+    requestBuckets.set(ip, { startTime: now, count: 1 });
+    return false;
+  }
+
+  bucket.count += 1;
+  if (bucket.count > RATE_LIMIT_MAX_REQUESTS) {
+    return true;
+  }
+
+  return false;
+};
+
+const clearExpiredRateLimitBuckets = () => {
+  const now = Date.now();
+  for (const [ip, bucket] of requestBuckets.entries()) {
+    if (now - bucket.startTime >= RATE_LIMIT_WINDOW_MS) {
+      requestBuckets.delete(ip);
+    }
+  }
+};
+
+const isPresent = <T>(value: T | null | undefined): value is T => Boolean(value);
+
 export default defineEventHandler(async (event) => {
   const { debug } = getQuery(event);
-  const debugEnabled = debug === "1" || debug === "true";
+  const debugEnabled = process.dev && (debug === "1" || debug === "true");
+  const requestIp = getRequestIP(event, { xForwardedFor: true }) || "unknown";
+
+  clearExpiredRateLimitBuckets();
+  if (isRateLimited(requestIp)) {
+    setResponseStatus(event, 429);
+    return debugEnabled ? { items: [], error: "rate_limited", info: { requestIp } } : { items: [] };
+  }
+
+  if (cachedMediaResponse && cachedMediaResponse.expiresAt > Date.now()) {
+    return debugEnabled
+      ? {
+          items: cachedMediaResponse.items,
+          info: {
+            cache: "hit"
+          }
+        }
+      : { items: cachedMediaResponse.items };
+  }
+
   const { instagram } = useRuntimeConfig();
   const accessToken = instagram?.accessToken;
   const userId = instagram?.userId;
@@ -136,7 +196,10 @@ export default defineEventHandler(async (event) => {
       : { items: [] };
   }
 
-  const limit = Number.isFinite(instagram?.limit) ? Number(instagram?.limit) : 9;
+  const configuredLimit = Number(instagram?.limit);
+  const limit = Number.isFinite(configuredLimit)
+    ? Math.min(Math.max(Math.trunc(configuredLimit), 1), 12)
+    : 9;
   const fields = [
     "id",
     "caption",
@@ -151,7 +214,7 @@ export default defineEventHandler(async (event) => {
 
   try {
     const response = await $fetch<InstagramMediaResponse>(url);
-    const items =
+    const items: InstagramPublicItem[] =
       response.data
         ?.map((item) => {
           const image =
@@ -170,7 +233,12 @@ export default defineEventHandler(async (event) => {
             url: item.permalink || ""
           };
         })
-        .filter(Boolean) ?? [];
+        .filter(isPresent) ?? [];
+
+    cachedMediaResponse = {
+      expiresAt: Date.now() + responseCacheTtlMs,
+      items
+    };
 
     return debugEnabled
       ? {
@@ -178,7 +246,8 @@ export default defineEventHandler(async (event) => {
           info: {
             resolvedUserId,
             limit,
-            baseUrl
+            baseUrl,
+            cache: "miss"
           }
         }
       : { items };

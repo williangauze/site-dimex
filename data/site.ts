@@ -1,5 +1,6 @@
 const baseUrl = "https://www.dimexprofiles.com.br";
 const catalogUrl = "/arquivos/catalogo-2025";
+const whatsappUrl = "https://wa.me/5554996125703";
 
 export const site = {
   name: "Dimex Window Profile",
@@ -55,10 +56,13 @@ export const site = {
     email: "contato@dimexprofiles.com.br",
     phones: ["54 3029-2022", "54 3029-2024"],
     phonesRaw: ["+555430292022", "+555430292024"],
-    address: "Rua Frei Pacífico, 588, São José, Caxias do Sul, RS, CEP 95032-380",
-    addressLink: "https://goo.gl/maps/WQbdjGuJSMn",
+    whatsappPhone: "54 99612-5703",
+    whatsappUrl,
+    address: "Emílio Ribas, 249 - Santa Catarina, Caxias do Sul - RS, 95032-350",
+    addressLink:
+      "https://www.google.com/maps/search/?api=1&query=Em%C3%ADlio%20Ribas%2C%20249%20-%20Santa%20Catarina%2C%20Caxias%20do%20Sul%20-%20RS%2C%2095032-350",
     mapEmbed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3484.4643993325267!2d-51.19087468473989!3d-29.150984297255352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951ea2cf6cc28875%3A0xda323f4d9f867ad0!2sDIMEX%20%2F%20QLEEN%20PERFIS%20EM%20PVC%20PARA%20ESQUADRIAS!5e0!3m2!1spt-BR!2sbr!4v1547579223433"
+      "https://www.google.com/maps?q=Em%C3%ADlio%20Ribas%2C%20249%20-%20Santa%20Catarina%2C%20Caxias%20do%20Sul%20-%20RS%2C%2095032-350&output=embed"
   },
   hero: {
     eyebrow: "Perfis de PVC que unem tecnologia, confiança e durabilidade",
@@ -66,9 +70,10 @@ export const site = {
     description:
       "Fundada em 1933, em Stuttgart, a Dimex entrega perfis de PVC com tecnologia aplicada, matérias-primas de alta pureza e 20 anos de garantia nas linhas de produtos.",
     highlights: ["Padrão europeu", "20 anos de garantia", "Eficiência energética", "Sustentabilidade"],
-    image: "/foto-home.webp",
+    image: "/217.webp",
+    carouselImages: ["/217.webp", "/224.webp", "/225.webp", "/227.webp", "/230.webp", "/231.webp"],
     ctaPrimary: { label: "Conheça os produtos", to: "/produtos" },
-    ctaSecondary: { label: "Fale com a Dimex", to: "/contato" }
+    ctaSecondary: { label: "Fale com a Dimex", to: whatsappUrl }
   },
   stats: [
     { label: "Fundada", value: "1933" },

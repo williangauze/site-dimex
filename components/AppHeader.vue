@@ -1,5 +1,5 @@
 <template>
-  <header class="site-header">
+  <header class="site-header" :class="{ 'is-scrolled': isScrolled }">
     <div class="nav-bar">
       <div class="container nav-bar__inner">
         <NuxtLink to="/" class="brand">
@@ -27,7 +27,14 @@
           >
             {{ isDark ? "Modo claro" : "Modo escuro" }}
           </UButton>
-          <UButton to="/contato" class="btn btn--primary">Falar com a Dimex</UButton>
+          <UButton
+            :href="site.contact.whatsappUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--primary"
+          >
+            Falar com a Dimex
+          </UButton>
         </div>
         <div class="nav-mobile">
           <button
@@ -77,7 +84,13 @@
                 >
                   {{ isDark ? "Modo claro" : "Modo escuro" }}
                 </UButton>
-                <UButton to="/contato" class="btn btn--primary" @click="closeMobileMenu">
+                <UButton
+                  :href="site.contact.whatsappUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn--primary"
+                  @click="closeMobileMenu"
+                >
                   Falar com a Dimex
                 </UButton>
               </div>
@@ -92,12 +105,13 @@
 <script setup lang="ts">
 import { site } from "~/data/site";
 
-const logoUrl = computed(() => (isDark.value ? "/logo.webp" : "/logo-2.webp"));
 const theme = ref<"light" | "dark">("light");
 const route = useRoute();
 const isMobileMenuOpen = ref(false);
+const isScrolled = ref(false);
 
 const isDark = computed(() => theme.value === "dark");
+const logoUrl = computed(() => (isDark.value ? "/logo.webp" : "/logo-2.webp"));
 
 const isActiveRoute = (target: string) => {
   if (target === "/") return route.path === "/";
@@ -147,10 +161,17 @@ const onResize = () => {
   }
 };
 
+const updateScrolledState = () => {
+  if (typeof window === "undefined") return;
+  isScrolled.value = window.scrollY > 10;
+};
+
 onMounted(() => {
   if (typeof window === "undefined") return;
   window.addEventListener("keydown", onKeyDown);
   window.addEventListener("resize", onResize);
+  window.addEventListener("scroll", updateScrolledState, { passive: true });
+  updateScrolledState();
 
   const saved = localStorage.getItem("theme");
   if (saved === "light" || saved === "dark") {
@@ -165,6 +186,7 @@ onBeforeUnmount(() => {
   if (typeof window === "undefined") return;
   window.removeEventListener("keydown", onKeyDown);
   window.removeEventListener("resize", onResize);
+  window.removeEventListener("scroll", updateScrolledState);
   setBodyLock(false);
 });
 

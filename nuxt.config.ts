@@ -1,9 +1,47 @@
 const baseUrl = "https://www.dimexprofiles.com.br";
 const ogImage = `${baseUrl}/foto-home.webp`;
+const isProduction = process.env.NODE_ENV === "production";
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "frame-ancestors 'self'",
+  "form-action 'self' mailto:",
+  "img-src 'self' data: blob: https:",
+  "font-src 'self' https://fonts.gstatic.com data:",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "script-src 'self' 'unsafe-inline' https://www.instagram.com https://platform.instagram.com",
+  "connect-src 'self' https://graph.facebook.com https://www.instagram.com",
+  "frame-src 'self' https://www.instagram.com https://*.instagram.com https://www.google.com https://www.google.com.br",
+  "upgrade-insecure-requests"
+].join("; ");
+const securityHeaders = {
+  "Content-Security-Policy": contentSecurityPolicy,
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "SAMEORIGIN",
+  "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+  "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+};
 
 export default defineNuxtConfig({
   css: ["~/assets/styles/main.css"],
   modules: ["@nuxt/ui", "@nuxt/image"],
+  ...(isProduction
+    ? {
+        routeRules: {
+          "/**": {
+            headers: securityHeaders
+          },
+          "/api/**": {
+            headers: {
+              ...securityHeaders,
+              "Cache-Control": "no-store, max-age=0"
+            }
+          }
+        }
+      }
+    : {}),
   runtimeConfig: {
     instagram: {
       accessToken: process.env.NUXT_INSTAGRAM_ACCESS_TOKEN || "",

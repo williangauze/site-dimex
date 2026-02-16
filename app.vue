@@ -46,7 +46,7 @@ const organizationSchema = computed(() => ({
     addressLocality: "Caxias do Sul",
     addressRegion: "RS",
     addressCountry: "BR",
-    postalCode: "95032-380"
+    postalCode: "95032-350"
   }
 }));
 
@@ -68,13 +68,17 @@ useHead(() => ({
 <style>
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.4s;
+  transition:
+    opacity 360ms ease,
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 360ms ease;
 }
 
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
-  filter: blur(1rem);
+  transform: translate3d(0, 14px, 0) scale(0.99);
+  filter: blur(0.65rem);
 }
 </style>
 
